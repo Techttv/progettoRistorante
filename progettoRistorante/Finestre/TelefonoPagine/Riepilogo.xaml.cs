@@ -71,24 +71,32 @@ namespace progettoRistorante.Finestre.TelefonoPagine
         private void btn_rimuovi_Click(object sender, RoutedEventArgs e)
         {
             string piattoNome = "";
-            int[] selecteds
+            int[] selectIndex= { 0, 0 };
             if (lb_primi.SelectedIndex != -1)
             {
+                selectIndex[0] = 1;
+                selectIndex[1] = lb_primi.SelectedIndex;
                 piattoNome = (string)lb_primi.SelectedItem;
                 lb_primi.Items.Remove(lb_primi.SelectedItem);
 
             }
             if (lb_secondi.SelectedIndex != -1)
-            {
+            {         
+                selectIndex[0] = 2;
+                selectIndex[1] = lb_secondi.SelectedIndex;
                 piattoNome = (string)lb_secondi.SelectedItem;
                 lb_secondi.Items.Remove(lb_secondi.SelectedItem);
 
             }
             if (lb_bevande.SelectedIndex != -1)
             {
+                selectIndex[0] = 4;
+                selectIndex[1] = lb_bevande.SelectedIndex;
                 piattoNome = (string)lb_bevande.SelectedItem;
                 lb_bevande.Items.Remove(lb_bevande.SelectedItem);
+
             }
+
             if (lb_primi.SelectedIndex != -1 && lb_secondi.SelectedIndex != -1 && lb_bevande.SelectedIndex != -1)
             {
                 ricarica();
@@ -100,7 +108,34 @@ namespace progettoRistorante.Finestre.TelefonoPagine
                     piatto.quantita++;
                     NuovoOrdine.tavolo.rimuoviPiatto(piatto);
                     totale -=piatto.prezzo;
+                    ricarica();
+                    switch(selectIndex[0])
+                    {
+                        case 1:
+                            lb_primi.SelectedIndex = selectIndex[1];
+                            break;
+                        case 2:
+                            lb_secondi.SelectedIndex = selectIndex[1];
+                            break;
+                        case 3:
+                            lb_bevande.SelectedIndex= selectIndex[1];
+                            break;  
+                    }
                 }
+
+            }
+            if (NuovoOrdine.tavolo.ordine.Count == 0)
+            {
+                DoubleAnimation doubleAnimation = new DoubleAnimation();
+                doubleAnimation.From = 0;
+                doubleAnimation.To = 1;
+                doubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(1));
+                doubleAnimation.AutoReverse = false;
+
+                btn_avanti.BeginAnimation(UIElement.OpacityProperty, doubleAnimation);
+
+                btn_avanti.Visibility = Visibility.Hidden;
+                btn_avanti.IsEnabled = false;
             }
             lbl_totale.Content = totale+"€";
         }

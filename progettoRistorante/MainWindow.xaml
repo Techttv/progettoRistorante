@@ -109,7 +109,13 @@
                     </ScrollViewer>
                 </Grid>
             </Border>
-            <Border BorderThickness="3,3,3,3" CornerRadius="13" BorderBrush="#FF609966" Width="412" Height="176" Margin="112,18,0,42" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0,0,0,0" />
+            <Border BorderThickness="3,3,3,3" CornerRadius="13" BorderBrush="#FF609966" Width="412" Height="176" Margin="112,18,0,42" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0,0,0,0" >
+                <ScrollViewer Style="{DynamicResource ScrollViewerStyleTable1}" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
+                    <StackPanel Orientation="Horizontal" x:Name="stack_fornelli" Height="160" CanHorizontallyScroll="False" Margin="10,0,0,0" >
+                        
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
         </StackPanel>
 
         <Button Style="{DynamicResource ButtonStyle1}" Tag="false" x:Name="btn_ordini" Content="O" HorizontalAlignment="Left" Margin="35,146,0,0" VerticalAlignment="Top" Height="50" Width="50" FontFamily="{DynamicResource SFPro Bold Display}" FontSize="36" Background="{x:Null}" Click="btn_ordini_Click" />

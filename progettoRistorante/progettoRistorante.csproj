@@ -21,6 +21,7 @@
     <None Remove="Icon\InCorso_icon.png" />
     <None Remove="Icon\Modifica.png" />
     <None Remove="Icon\Paga.png" />
+    <None Remove="Icon\Pentola.png" />
     <None Remove="Icon\Preparazione_icon.png" />
     <None Remove="Icon\receipt.jpg" />
     <None Remove="Icon\table_icon.png" />
@@ -122,6 +123,7 @@
     </Resource>
     <Resource Include="Icon\Modifica.png" />
     <Resource Include="Icon\Paga.png" />
+    <Resource Include="Icon\Pentola.png" />
     <Resource Include="Icon\Preparazione_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

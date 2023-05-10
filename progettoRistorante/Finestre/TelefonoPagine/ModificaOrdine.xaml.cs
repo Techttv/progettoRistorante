@@ -142,32 +142,36 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             string piattoNome = "";
             if (lb_primi.SelectedIndex != -1)
             {
-                piattoNome = (string)lb_primi.SelectedItem;
-                lb_primi.Items.Remove(lb_primi.SelectedItem);
                 selectedIndex[0] = 1;
                 selectedIndex[1] = lb_primi.SelectedIndex;
+                piattoNome = (string)lb_primi.SelectedItem;
+                lb_primi.Items.Remove(lb_primi.SelectedItem);
+
 
             }
             if (lb_secondi.SelectedIndex != -1)
             {
-                piattoNome = (string)lb_secondi.SelectedItem;
-               lb_secondi.Items.Remove(lb_secondi.SelectedItem);
                 selectedIndex[0] = 2;
                 selectedIndex[1] = lb_secondi.SelectedIndex;
+                piattoNome = (string)lb_secondi.SelectedItem;
+               lb_secondi.Items.Remove(lb_secondi.SelectedItem);
+
             }
             if (lb_dolci.SelectedIndex != -1)
             {
-                piattoNome = (string)lb_dolci.SelectedItem;
-                lb_dolci.Items.Remove(lb_dolci.SelectedItem);
                 selectedIndex[0] = 3;
                 selectedIndex[1] = lb_dolci.SelectedIndex;
+                piattoNome = (string)lb_dolci.SelectedItem;
+                lb_dolci.Items.Remove(lb_dolci.SelectedItem);
+
             }
             if (lb_bevande.SelectedIndex != -1)
             {
-                piattoNome = (string)lb_bevande.SelectedItem;
-                lb_bevande.Items.Remove(lb_bevande.SelectedItem);
                 selectedIndex[0] = 4;
                 selectedIndex[1] = lb_bevande.SelectedIndex;
+                piattoNome = (string)lb_bevande.SelectedItem;
+                lb_bevande.Items.Remove(lb_bevande.SelectedItem);
+
             }
             foreach (PiattoMenu piatto in MainWindow.menu)
             {

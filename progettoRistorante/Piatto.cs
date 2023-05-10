@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using Timer = System.Timers.Timer;
 
 namespace progettoRistorante
 {
     public class Piatto
     {
-        public int id { get; set; }
+        public int tempoCottura{ get; set; }    
         public string desc { get; set; }
         public int Status{ get; set; }
 
@@ -28,7 +29,7 @@ namespace progettoRistorante
 
         public override string ToString()
         {
-            return id+" "+desc+""+tipo+""+Status;
+            return desc+""+tipo+""+Status;
         }
 
         public void pronto()

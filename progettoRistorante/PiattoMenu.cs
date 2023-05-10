@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 namespace progettoRistorante
 {
     public class PiattoMenu : Piatto
-    {
+    {   
+        int porzioniPronte { get; set; }
         public int quantita { get; set; }
-        public float tempo { get; set; }
+        public float tempoDiCottura { get; set; }
         public PiattoMenu(string desc, int tipo, int quantita,float tempo) : base(desc, tipo)
         {
             this.quantita = quantita;
-            this.tempo = tempo;
+            this.tempoDiCottura = tempo;
         }
 
     }

@@ -5,9 +5,15 @@
     <Compile Update="CCTavoloTipo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="fornello.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="CCTavoloTipo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="fornello.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="piattoStatus.xaml">

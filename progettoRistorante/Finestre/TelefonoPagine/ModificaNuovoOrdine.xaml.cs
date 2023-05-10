@@ -84,27 +84,31 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             int[] selectedIndex = { 0, 2 };
             if (lb_primi.SelectedIndex != -1)
             {
-                piattoNome = (string)lb_primi.SelectedItem;
                 selectedIndex[0] = 1;
                 selectedIndex[1] = lb_primi.SelectedIndex;
+                piattoNome = (string)lb_primi.SelectedItem;
+
             }
             if (lb_secondi.SelectedIndex != -1)
             {
-                piattoNome = (string)lb_secondi.SelectedItem;
                 selectedIndex[0] = 2;
                 selectedIndex[1] = lb_secondi.SelectedIndex;
+                piattoNome = (string)lb_secondi.SelectedItem;
+
             }
             if (lb_bevande.SelectedIndex != -1)
             {
-                piattoNome = (string)lb_bevande.SelectedItem;
                 selectedIndex[0] = 4;
                 selectedIndex[1] = lb_bevande.SelectedIndex;
+                piattoNome = (string)lb_bevande.SelectedItem;
+
             }
             if (lb_dolci.SelectedIndex != -1)
             {
-                piattoNome = (string)lb_dolci.SelectedItem;
                 selectedIndex[0] = 3;
                 selectedIndex[1] = lb_dolci.SelectedIndex;
+                piattoNome = (string)lb_dolci.SelectedItem;
+
             }
             foreach (PiattoMenu piatto in MainWindow.menu)
             {
