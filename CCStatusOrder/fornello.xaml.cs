@@ -35,6 +35,7 @@ namespace CCStatusOrder
         {
             Resources["RectangleColorPreparazione"] = Resources["RectangleColorDisponibile"];
             icona_status.Source = new BitmapImage(new Uri("/progettoRistorante;component/Icon/Disponibile_icon.png", UriKind.Relative));
+        
         }
 
         public void inPreparazione()
@@ -42,6 +43,7 @@ namespace CCStatusOrder
             Resources["RectangleColorPreparazione"] = Resources["RectangleColorInCorso"];
             icona_status.Source = new BitmapImage(new Uri("/progettoRistorante;component/Icon/Preparazione.png", UriKind.Relative));
             id = 1;
+            lbl_status.Content = "In corso";
         }
 
         public void Finito()
@@ -49,6 +51,7 @@ namespace CCStatusOrder
             Resources["RectangleColorPreparazione"] = Resources["RectangleColorPronto"];
             icona_status.Source = new BitmapImage(new Uri("/progettoRistorante;component/Icon/DaFare_icon.png", UriKind.Relative));
             id = 2;
+            lbl_status.Content = "Finito";
         }
     }
 }

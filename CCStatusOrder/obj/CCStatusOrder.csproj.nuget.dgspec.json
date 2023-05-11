@@ -1,28 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tomma\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\CCStatusOrder.csproj": {}
+    "C:\\Users\\19TOMMASOCARICATO\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\CCStatusOrder.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tomma\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\CCStatusOrder.csproj": {
+    "C:\\Users\\19TOMMASOCARICATO\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\CCStatusOrder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomma\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\CCStatusOrder.csproj",
+        "projectUniqueName": "C:\\Users\\19TOMMASOCARICATO\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\CCStatusOrder.csproj",
         "projectName": "CCStatusOrder",
-        "projectPath": "C:\\Users\\tomma\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\CCStatusOrder.csproj",
-        "packagesPath": "C:\\Users\\tomma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomma\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\obj\\",
+        "projectPath": "C:\\Users\\19TOMMASOCARICATO\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\CCStatusOrder.csproj",
+        "packagesPath": "C:\\Users\\19TOMMASOCARICATO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\19TOMMASOCARICATO\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\tomma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\19TOMMASOCARICATO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0-windows"
+          "net5.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -49,8 +45,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -62,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }

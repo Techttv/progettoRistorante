@@ -8,7 +8,8 @@ namespace progettoRistorante
 {
     public class PiattoMenu : Piatto
     {   
-        int porzioniPronte { get; set; }
+        public int porzioniPerCottura { get; set; }
+        public int porzioniPronte { get; set; }
         public int quantita { get; set; }
         public float tempoDiCottura { get; set; }
         public PiattoMenu(string desc, int tipo, int quantita,float tempo) : base(desc, tipo)

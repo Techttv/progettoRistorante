@@ -1,43 +1,43 @@
-1;Spaghetti alla puttanesca;6;10;10
-1;Pasta al pesto;6;10;10
-1;Risotto alla milanese;8;10;15
-1;Spaghetti alla carbonara;8;10;10
-1;Spaghetti allo scoglio;10;10;10
-1;Spaghetti cacio e pepe;8;10;10
-1;Gnocchi con la papera;6;10;5
-1;Gnocchi al ragu';6;10;5
-1;Ravioli burro e salvia;5;10;5
-1;Tagliatelle al ragu';6;10;5
-1;Risotto ai funghi;12;10;15
-1;Risotto alla pescatora;10;10;15
-2;Cotoletta alla milanese;7;7;15
-2;Coniglio in porchetta;8;7;10
-2;Bistecca ai ferri;8;7;8
-2;Arrosto misto;10;7;20
-2;Fritto misto;10;7;5
-2;Tagliata rucola e pomodorini;14;7;10
-2;Spigola al cartoccio;10;7;10
-2;Coda di rospo alla genovese;8;7;10
-2;Insalata verde;3;7;0
-2;Verdure grigliate;3;7;10
-2;Broccoletti al vapore;5;7;5
-2;Asparagi;6;7;15
-2;Cicoria Ripassata;4;7;15
-2;Carciofi alla giudia;3;7;15
-3;Tiramisu';6;5;6
-3;Tortina al cioccolato;6;5;6
-3;Pannacotta;6;5;6
-3;Salame al cioccolato;6;5;6
-3;Cheesecake;6;5;6
-3;Crostata ai frutti di bosco;6;5;6
-4;Acqua Frizzante 1L;1,5;10;0
-4;Acqua Naturale 1L;1,5;10;0
-4;Coca cola 33CL;2;10;0
-4;Coca cola 1L;2,5;10;0
-4;Vino rosso 1L;7;5;0
-4;Vino bianco 1L;7;5;0
-4;Vino Rose' 1L;7;5;0
-4;Prosecco 1L;6;5;0
-4;Birra Bionda 1L;5;5;0
-4;Birra Rossa 1L;5;5;0
-4;Birra doppio malto 1L;5;5;0
+1;Spaghetti alla puttanesca;6;10;10;5
+1;Pasta al pesto;6;10;10;5
+1;Risotto alla milanese;8;10;15;5
+1;Spaghetti alla carbonara;8;10;10;5
+1;Spaghetti allo scoglio;10;10;10;5
+1;Spaghetti cacio e pepe;8;10;10;5
+1;Gnocchi con la papera;6;10;5;5
+1;Gnocchi al ragu';6;10;5;5
+1;Ravioli burro e salvia;5;10;5;5
+1;Tagliatelle al ragu';6;10;5;5
+1;Risotto ai funghi;12;10;15;5
+1;Risotto alla pescatora;10;10;15;5
+2;Cotoletta alla milanese;7;7;15;3
+2;Coniglio in porchetta;8;7;10;3
+2;Bistecca ai ferri;8;7;8;3
+2;Arrosto misto;10;7;20;3
+2;Fritto misto;10;7;5;3
+2;Tagliata rucola e pomodorini;14;7;10;3
+2;Spigola al cartoccio;10;7;10;3
+2;Coda di rospo alla genovese;8;7;10;3
+2;Insalata verde;3;7;0;10
+2;Verdure grigliate;3;7;10;10
+2;Broccoletti al vapore;5;7;5;3
+2;Asparagi;6;7;15;3
+2;Cicoria Ripassata;4;7;15;5
+2;Carciofi alla giudia;3;7;15;6
+3;Tiramisu';6;5;6;7
+3;Tortina al cioccolato;6;5;6;7
+3;Pannacotta;6;5;6;7
+3;Salame al cioccolato;6;5;6;7
+3;Cheesecake;6;5;6;7
+3;Crostata ai frutti di bosco;6;5;6;7
+4;Acqua Frizzante 1L;1,5;10;0;9999
+4;Acqua Naturale 1L;1,5;10;0;9999
+4;Coca cola 33CL;2;10;0;9999
+4;Coca cola 1L;2,5;10;0;9999
+4;Vino rosso 1L;7;5;0;9999
+4;Vino bianco 1L;7;5;0;9999
+4;Vino Rose' 1L;7;5;0;9999
+4;Prosecco 1L;6;5;0;9999
+4;Birra Bionda 1L;5;5;0;9999
+4;Birra Rossa 1L;5;5;0;9999
+4;Birra doppio malto 1L;5;5;0;9999

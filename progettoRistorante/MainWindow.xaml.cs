@@ -21,9 +21,9 @@ namespace progettoRistorante
         public static StackPanel ordiniGrid, colonnaPrimi, colonnaSecondi, colonnaDolci;
         public static WrapPanel wraptavoli;
         private ModificaTavoli CCModificaTavoli;
-        public Queue<Piatto> primi = new Queue<Piatto>();
-        public Queue<Piatto> secondi = new Queue<Piatto>();
-        public Queue<Piatto> dolci = new Queue<Piatto>();
+        public static Queue<Piatto> primi = new Queue<Piatto>();
+        public static Queue<Piatto> secondi = new Queue<Piatto>();
+        public static Queue<Piatto> dolci = new Queue<Piatto>();
 
         public MainWindow()
         {
@@ -31,8 +31,10 @@ namespace progettoRistorante
             CCModificaTavoli = new ModificaTavoli(tavoli.Count, Home.Height, Home.Width) { f1 = this };
 
             CCModificaTavoli.Visibility = Visibility.Hidden;
-
             MainWindowGrid.Children.Add(CCModificaTavoli);
+
+            VistaCucina vistaCucina = new VistaCucina();
+            vistaCucina.Show();
 
             TelefonoOrdinazioni telefonoOrdinazioni = new TelefonoOrdinazioni();
             telefonoOrdinazioni.Show();
@@ -184,7 +186,7 @@ namespace progettoRistorante
                 piatto = new PiattoMenu(colonne[1], int.Parse(colonne[0]), int.Parse(colonne[3]), int.Parse(colonne[4]));
                 piatto.prezzo = double.Parse(colonne[2]);
                 menu.Add(piatto);
-
+                piatto.porzioniPerCottura = int.Parse(colonne[5]);
 
             }
             sr.Close();

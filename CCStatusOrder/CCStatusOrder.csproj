@@ -25,4 +25,17 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="fornelloVista.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="fornelloVista.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>

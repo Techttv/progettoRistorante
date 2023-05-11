@@ -183,7 +183,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
                         if (tavolo.numeroTavolo == int.Parse(cmb_tavoli.SelectedItem.ToString()))
                         {
                             piatto.quantita++;
-                            tavolo.ordine.Remove(piatto);
+                            tavolo.rimuoviPiatto(piatto);
                             totale -= piatto.prezzo;
                             numeroPiatti--;
                             lbl_numero_piatti.Content = numeroPiatti;
@@ -251,7 +251,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
                 if (elemento.desc.Equals(nomepiatto)&&elemento.quantita>0)
                 {
                     elemento.quantita--;
-                    tavolo.ordine.Add(elemento);
+                    tavolo.aggiungiPiatto(elemento);
                     numeroPiatti++;
                     btn_avanti.Visibility = Visibility.Visible;
                     btn_avanti.IsEnabled = true;

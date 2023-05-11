@@ -117,7 +117,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
                     numeroPiatti++;
                     piatto.quantita--;
                     lbl_numero_piatti.Content = numeroPiatti;
-                    tavolo.ordine.Add(piatto);
+                    tavolo.aggiungiPiatto(piatto);
                     btn_avanti.Visibility = Visibility.Visible;
                     btn_avanti.IsEnabled = true;
                     if (hasChanged_)

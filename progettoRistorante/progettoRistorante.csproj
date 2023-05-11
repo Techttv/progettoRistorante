@@ -18,6 +18,8 @@
     <None Remove="Icon\food.png" />
     <None Remove="Icon\icon _add.png" />
     <None Remove="Icon\icon _remove.png" />
+    <None Remove="Icon\icon_close.png" />
+    <None Remove="Icon\icon_open.png" />
     <None Remove="Icon\InCorso_icon.png" />
     <None Remove="Icon\Modifica.png" />
     <None Remove="Icon\Paga.png" />
@@ -118,6 +120,8 @@
     <Resource Include="Icon\icon _remove.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Icon\icon_close.png" />
+    <Resource Include="Icon\icon_open.png" />
     <Resource Include="Icon\InCorso_icon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

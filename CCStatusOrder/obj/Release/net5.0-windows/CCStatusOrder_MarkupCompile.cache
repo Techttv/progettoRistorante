@@ -4,17 +4,17 @@
 library
 C#
 .cs
-C:\Users\tomma\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Release\net5.0-windows\
+C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Release\net5.0-windows\
 CCStatusOrder
 none
 false
 TRACE;RELEASE;NET;NET5_0;NETCOREAPP
 
-3-873971972
+41507727567
 1-1132525017
-4862343619
+5812706425
 193-1891726104
-CCTavoloTipo.xaml;fornello.xaml;piattoStatus.xaml;
+CCTavoloTipo.xaml;fornello.xaml;fornelloVista.xaml;piattoStatus.xaml;
 
 True
 
