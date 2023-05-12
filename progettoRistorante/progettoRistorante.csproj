@@ -14,6 +14,7 @@
     <None Remove="Icon\back.png" />
     <None Remove="Icon\DaFare_icon.png" />
     <None Remove="Icon\Disponibile_icon.png" />
+    <None Remove="Icon\fastForward.png" />
     <None Remove="Icon\Finito_icon.png" />
     <None Remove="Icon\food.png" />
     <None Remove="Icon\icon _add.png" />
@@ -108,6 +109,9 @@
     <Resource Include="Icon\Disponibile_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Icon\fastForward.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icon\Finito_icon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -127,7 +131,9 @@
     </Resource>
     <Resource Include="Icon\Modifica.png" />
     <Resource Include="Icon\Paga.png" />
-    <Resource Include="Icon\Pentola.png" />
+    <Resource Include="Icon\Pentola.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icon\Preparazione_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -156,6 +162,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Update="UserControl\fornelloVista.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -171,6 +180,10 @@
     </Page>
     <Page Update="ModificaTavoli.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="UserControl\fornelloVista.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
 

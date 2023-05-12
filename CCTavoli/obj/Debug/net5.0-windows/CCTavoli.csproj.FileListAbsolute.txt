@@ -4,6 +4,7 @@ C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCTavoli\bin\
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCTavoli\bin\Debug\net5.0-windows\CCTavoli.dll
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCTavoli\bin\Debug\net5.0-windows\ref\CCTavoli.dll
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCTavoli\bin\Debug\net5.0-windows\CCTavoli.pdb
+C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCTavoli\obj\Debug\net5.0-windows\CCTavoli.csprojAssemblyReference.cache
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCTavoli\obj\Debug\net5.0-windows\IconaTavolo.g.cs
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCTavoli\obj\Debug\net5.0-windows\CCTavoli_MarkupCompile.cache
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCTavoli\obj\Debug\net5.0-windows\CCTavoli_MarkupCompile.lref

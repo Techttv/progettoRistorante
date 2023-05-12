@@ -21,9 +21,6 @@ namespace progettoRistorante
         public static StackPanel ordiniGrid, colonnaPrimi, colonnaSecondi, colonnaDolci;
         public static WrapPanel wraptavoli;
         private ModificaTavoli CCModificaTavoli;
-        public static Queue<Piatto> primi = new Queue<Piatto>();
-        public static Queue<Piatto> secondi = new Queue<Piatto>();
-        public static Queue<Piatto> dolci = new Queue<Piatto>();
 
         public MainWindow()
         {

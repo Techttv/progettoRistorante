@@ -61,7 +61,7 @@ namespace CCTavoli {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CCTavoli;component/iconatavolo.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CCTavoli_ise2jqnp_wpftmp;component/iconatavolo.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\IconaTavolo.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

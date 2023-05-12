@@ -3,16 +3,13 @@ C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\bin\Debug\net5.0-windows\CCStatusOrder.dll
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\bin\Debug\net5.0-windows\ref\CCStatusOrder.dll
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\bin\Debug\net5.0-windows\CCStatusOrder.pdb
-C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\CCStatusOrder.csprojAssemblyReference.cache
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\CCTavoloTipo.g.cs
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\fornello.g.cs
-C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\fornelloVista.g.cs
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\piattoStatus.g.cs
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\CCStatusOrder_MarkupCompile.cache
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\CCStatusOrder_MarkupCompile.lref
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\CCTavoloTipo.baml
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\fornello.baml
-C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\fornelloVista.baml
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\piattoStatus.baml
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\CCStatusOrder.g.resources
 C:\Users\19TOMMASOCARICATO\Source\Repos\Techttv\progettoRistorante\CCStatusOrder\obj\Debug\net5.0-windows\CCStatusOrder.GeneratedMSBuildEditorConfig.editorconfig

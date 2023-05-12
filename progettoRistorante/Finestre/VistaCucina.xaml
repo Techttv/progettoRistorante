@@ -17,20 +17,14 @@
             </Border.Background>
         </Border>
         <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="40,20,80,15" Style="{DynamicResource ScrollViewerStyleTable1}" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
-        <StackPanel Orientation="Horizontal" x:Name="stack_fornelli" >
-            <cc:fornelloVista/>
-            <cc:fornelloVista/>
-            <cc:fornelloVista/>
-            <cc:fornelloVista/>
-            <cc:fornelloVista/>
-                <cc:fornelloVista/>
+            <StackPanel Orientation="Horizontal" x:Name="stack_fornelli" >
             </StackPanel>
         </ScrollViewer>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20">
-            <Button x:Name="btn_add" Width="30" Height="30" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Background="{DynamicResource Verde scuro}">
+            <Button x:Name="btn_add" Width="30" Height="30" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Background="{DynamicResource Verde scuro}" Click="aggiungiFornello">
                 <Image Source="/Icon/icon _add.png" Margin="6"/>
             </Button>
-            <Button x:Name="btn_remove" Width="30" Height="30" Margin="0,10" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Background="{DynamicResource Rosso}">
+            <Button x:Name="btn_remove" Width="30" Height="30" Margin="0,10" Style="{DynamicResource ButtonStyle1}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Background="{DynamicResource Rosso}" Click="rimuoviFornello">
                 <Image Source="/Icon/icon _remove.png" Margin="6"/>
             </Button>
         </StackPanel>

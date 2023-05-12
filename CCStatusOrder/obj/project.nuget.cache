@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "tLYlgmjpvI0FSOmO7U2JkfRee126S41UMK//lJz5CVNiQmTBwl/egNYa5S1fkci7kuGqW2Bp5im9ogJdx2Ln3Q==",
+  "dgSpecHash": "DgcYKgED6d+b0hMT56GygZb7ERKS7851XBuUSrrgP8CvrO/x4iHKB2mjho1oBT4WE/DpOx3IYZxQt+q/CpMnQw==",
   "success": true,
   "projectFilePath": "C:\\Users\\19TOMMASOCARICATO\\Source\\Repos\\Techttv\\progettoRistorante\\CCStatusOrder\\CCStatusOrder.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\19TOMMASOCARICATO\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\19TOMMASOCARICATO\\.nuget\\packages\\notification.wpf\\7.0.0\\notification.wpf.7.0.0.nupkg.sha512",
+    "C:\\Users\\19TOMMASOCARICATO\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

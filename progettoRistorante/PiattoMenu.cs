@@ -11,8 +11,8 @@ namespace progettoRistorante
         public int porzioniPerCottura { get; set; }
         public int porzioniPronte { get; set; }
         public int quantita { get; set; }
-        public float tempoDiCottura { get; set; }
-        public PiattoMenu(string desc, int tipo, int quantita,float tempo) : base(desc, tipo)
+        public int tempoDiCottura { get; set; }
+        public PiattoMenu(string desc, int tipo, int quantita,int tempo) : base(desc, tipo)
         {
             this.quantita = quantita;
             this.tempoDiCottura = tempo;

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace progettoRistorante
 {
     public class Tavolo
     {
+        DispatcherTimer timer;
         public int numeroTavolo { get; set; }
         public int status { get; set; }
         public List<Piatto> ordine = new List<Piatto>();
@@ -75,6 +77,11 @@ namespace progettoRistorante
         {
 
             return this.totale;
+        }
+
+        public void primiArrivati()
+        {
+            timer 
         }
     }
 }

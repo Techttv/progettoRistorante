@@ -29,6 +29,8 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             NuovoOrdine.tavolo.cambiaStatus(1);
             MainWindow.tavoli.RemoveAt(NuovoOrdine.tavolo.numeroTavolo - 1);
             MainWindow.tavoli.Insert(NuovoOrdine.tavolo.numeroTavolo - 1, NuovoOrdine.tavolo);
+            GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 1);
+            VistaCucina.preparaPiatto();
             NuovoOrdine.tavolo = new Tavolo();
             ModificaNuovoOrdine.tavolo = new Tavolo();
             MainWindow.ricarica();

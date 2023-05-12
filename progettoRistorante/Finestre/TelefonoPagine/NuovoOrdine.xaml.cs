@@ -100,7 +100,6 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             {
                 if (piatto.desc.Equals(piattoNome)&&piatto.quantita>0)
                 {
-                    piatto.Disponibile();
                     tavolo.aggiungiPiatto(piatto);
                     btn_avanti.Visibility = Visibility.Visible;
                     btn_avanti.IsEnabled = true;

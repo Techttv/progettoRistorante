@@ -24,6 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Notification.Wpf" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Icon\Disponibile_icon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
