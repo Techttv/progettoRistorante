@@ -168,8 +168,7 @@
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
 
-                                <Setter Property="BorderBrush" TargetName="border" Value="#9DC08B" />
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#9DC08B" />
+                                <Setter Property="Opacity" Value="0.5" />
                             </Trigger>
                             <Trigger Property="Tag" Value="false">
                                 <Setter Property="BorderBrush" TargetName="border" Value="#9DC08B" />

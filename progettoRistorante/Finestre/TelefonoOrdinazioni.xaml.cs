@@ -14,6 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PdfSharp.Fonts;
+using progettoRistorante.Classes;
 
 namespace progettoRistorante.Finestre
 {

@@ -14,6 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using progettoRistorante.Classes;
 
 namespace progettoRistorante.Finestre.TelefonoPagine
 {
@@ -106,7 +107,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
                 if (piatto.desc.Equals(piattoNome))
                 {
                     piatto.quantita++;
-                    NuovoOrdine.tavolo.rimuoviPiatto(piatto);
+                    NuovoOrdine.tavolo.rimuoviPiatto(piatto,"m");
                     totale -=piatto.prezzo;
                     ricarica();
                     switch(selectIndex[0])

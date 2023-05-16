@@ -2,6 +2,7 @@
 using PdfSharp.Drawing;
 using PdfSharp.Fonts;
 using PdfSharp.Pdf;
+using progettoRistorante.Classes;
 using System;
 using System.Diagnostics;
 using System.Globalization;

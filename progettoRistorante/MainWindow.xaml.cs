@@ -1,12 +1,15 @@
 ﻿using CCStatusOrder;
+using progettoRistorante.Classes;
 using progettoRistorante.Finestre;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using Timer = System.Timers.Timer;
+using progettoRistorante.UserControllers;
 
 namespace progettoRistorante
 {
@@ -60,7 +63,7 @@ namespace progettoRistorante
         private void Home_Initialized(object sender, EventArgs e)
         {
             int nuovonumero = Properties.Settings.Default.NumeroTavoli;
-            CCStatusOrder.CCTavoloTipo TavoloTipo;
+            TavoloTipo TavoloTipo;
             CCTavoli.IconaTavolo userControl11Tavoli;
             Tavolo tavolo;
             for (int i = tavoli.Count + 1; i <= nuovonumero; i++)
@@ -72,7 +75,8 @@ namespace progettoRistorante
                 tavolo.icona = userControl11Tavoli;
                 tavolo.numeroTavolo = i;
                 wrap_tavoli.Children.Add(userControl11Tavoli);
-                TavoloTipo = new CCStatusOrder.CCTavoloTipo();
+                TavoloTipo = new TavoloTipo();
+                tavolo.numeroTavolo = i;
                 TavoloTipo.cambiaTavoloNumero(i);
                 TavoloTipo.cambiaTipo(-1);
                 tavoli.Add(tavolo);
@@ -118,7 +122,7 @@ namespace progettoRistorante
             Tavolo tavolo;
 
             CCTavoli.IconaTavolo userControl11Tavoli;
-            CCStatusOrder.CCTavoloTipo TavoloTipo;
+            TavoloTipo TavoloTipo;
             if (tavoli.Count < nuovonumero)
             {
                 for (int i = tavoli.Count + 1; i <= nuovonumero; i++)
@@ -130,7 +134,7 @@ namespace progettoRistorante
                     tavolo.icona = userControl11Tavoli;
                     tavolo.numeroTavolo = i;
                     wrap_tavoli.Children.Add(userControl11Tavoli);
-                    TavoloTipo = new CCStatusOrder.CCTavoloTipo();
+                    TavoloTipo = new TavoloTipo();
                     TavoloTipo.cambiaTavoloNumero(i);
                     TavoloTipo.cambiaTipo(-1);
                     tavoli.Add(tavolo);
@@ -183,14 +187,13 @@ namespace progettoRistorante
                 piatto = new PiattoMenu(colonne[1], int.Parse(colonne[0]), int.Parse(colonne[3]), int.Parse(colonne[4]));
                 piatto.prezzo = double.Parse(colonne[2]);
                 menu.Add(piatto);
-                piatto.porzioniPerCottura = int.Parse(colonne[5]);
 
             }
             sr.Close();
         }
         public static void ricarica()
         {
-            CCTavoloTipo tavoloTipo;
+            TavoloTipo tavoloTipo;
             piattoStatus piattoStatus;
             wraptavoli.Children.Clear();
             ordiniGrid.Children.Clear();
@@ -199,7 +202,9 @@ namespace progettoRistorante
             colonnaDolci.Children.Clear();
             foreach (Tavolo tavolo in tavoli)
             {
-                tavoloTipo = new CCTavoloTipo();
+                tavoloTipo = new TavoloTipo();
+                tavoloTipo.bottone(tavolo.canSkip);
+
                 tavoloTipo.cambiaTavoloNumero(tavolo.numeroTavolo);
                 tavoloTipo.cambiaTipo(-1);
                 ordiniGrid.Children.Add(tavoloTipo);
@@ -208,38 +213,107 @@ namespace progettoRistorante
                 bool _primi = false, _secondi = false, _dolci = false;
                 foreach (Piatto piatto in tavolo.ordine)
                 {
-
-
+                    if (piatto.Status == 0)
+                    {
+                        continue;
+                    }
                     piattoStatus = new piattoStatus();
                     piattoStatus.CambiaTesto(piatto.desc);
+                    Trace.WriteLine(piatto.desc + " " + piatto.Status);
+                    switch (piatto.Status)
+                    {
+                        case 1:
+                            piattoStatus.Pronto();
+                            break;
+                        case 2:
+                            piattoStatus.InCorso();
+                            break;
+                        case 3:
+                            piattoStatus.Disponibile();
+                            break;
+                    }
 
-                    if (piatto.tipo == 1 && !_primi)
+                    if (piatto.tipo == 1)
                     {
-                        tavoloTipo = new CCTavoloTipo();
-                        tavoloTipo.cambiaTipo(1);
-                        tavoloTipo.cambiaTavoloNumero(-1);
-                        _primi = true;
-                        ordiniGrid.Children.Add(tavoloTipo);
-                    }
-                    if (piatto.tipo == 2 && !_secondi)
-                    {
-                        tavoloTipo = new CCTavoloTipo();
-                        tavoloTipo.cambiaTipo(2);
-                        tavoloTipo.cambiaTavoloNumero(-1);
-                        _secondi = true;
-                        ordiniGrid.Children.Add(tavoloTipo);
-                    }
-                    if (piatto.tipo == 3 && !_dolci)
-                    {
-                        tavoloTipo = new CCTavoloTipo();
-                        tavoloTipo.cambiaTipo(3);
-                        tavoloTipo.cambiaTavoloNumero(-1);
-                        ordiniGrid.Children.Add(tavoloTipo);
-                        _dolci = true;
-                    }
-                    if (piatto.tipo != 4)
-                    {
+                        if (!_primi)
+                        {
+                            tavoloTipo = new TavoloTipo();
+                            tavoloTipo.cambiaTipo(1);
 
+                            tavoloTipo.cambiaTavoloNumero(-1);
+                            _primi = true;
+                            ordiniGrid.Children.Add(tavoloTipo);
+                        }
+                        ordiniGrid.Children.Add(piattoStatus);
+                    }
+                }
+                foreach (Piatto piatto in tavolo.ordine)
+                {
+                    if (piatto.Status == 0)
+                    {
+                        continue;
+                    }
+                    piattoStatus = new piattoStatus();
+                    piattoStatus.CambiaTesto(piatto.desc);
+                    switch (piatto.Status)
+                    {
+                        case 1:
+                            piattoStatus.Pronto();
+                            break;
+                        case 2:
+                            piattoStatus.InCorso();
+                            break;
+                        case 3:
+                            piattoStatus.Disponibile();
+                            break;
+                    }
+
+                    if (piatto.tipo == 2)
+                    {
+                        if (!_secondi)
+                        {
+                            tavoloTipo = new TavoloTipo();
+                            tavoloTipo.cambiaTipo(2);
+
+                            tavoloTipo.cambiaTavoloNumero(-1);
+                            _secondi = true;
+                            ordiniGrid.Children.Add(tavoloTipo);
+                        }
+                        ordiniGrid.Children.Add(piattoStatus);
+                    }
+                }
+                foreach (Piatto piatto in tavolo.ordine)
+                {
+                    if (piatto.Status == 0)
+                    {
+                        continue;
+                    }
+                    piattoStatus = new piattoStatus();
+                    piattoStatus.CambiaTesto(piatto.desc);
+                    switch (piatto.Status)
+                    {
+                        case 1:
+                            piattoStatus.Pronto();
+                            break;
+                        case 2:
+                            piattoStatus.InCorso();
+                            break;
+                        case 3:
+                            piattoStatus.Disponibile();
+                            break;
+                    }
+
+                    if (piatto.tipo == 3)
+                    {
+                        if (!_dolci)
+                        {
+                            tavoloTipo = new TavoloTipo();
+                            tavoloTipo.cambiaTipo(3);
+
+                            tavoloTipo.cambiaTavoloNumero(-1);
+                            ordiniGrid.Children.Add(tavoloTipo);
+                            _dolci = true;
+                        }
                         ordiniGrid.Children.Add(piattoStatus);
                     }
                 }
@@ -249,23 +323,42 @@ namespace progettoRistorante
 
             foreach (Tavolo tavolo1 in findTavoliOccupati())
             {
-                tavoloTipo = new CCTavoloTipo();
+                tavoloTipo = new TavoloTipo();
                 tavoloTipo.cambiaTipo(-1);
+
                 tavoloTipo.cambiaTavoloNumero(tavolo1.numeroTavolo);
                 tavoloTipo.coloreVerde();
                 bool _primi = false; bool _secondi = false, _dolci = false;
                 foreach (Piatto piatto in tavolo1.ordine)
                 {
+                    if (piatto.Status == 0)
+                    {
+                        continue;
+                    }
                     piattoStatus = new piattoStatus();
                     piattoStatus.CambiaTesto(piatto.desc);
                     piattoStatus.coloreVerde();
+                    switch (piatto.Status)
+                    {
+                        case 1:
+                            piattoStatus.Pronto();
+                            break;
+                        case 2:
+                            piattoStatus.InCorso();
+                            break;
+                        case 3:
+                            piattoStatus.Disponibile();
+                            break;
+                    }
+
                     switch (piatto.tipo)
                     {
                         case 1:
                             if (!_primi)
                             {
-                                tavoloTipo = new CCTavoloTipo();
+                                tavoloTipo = new TavoloTipo();
                                 tavoloTipo.cambiaTipo(-1);
+
                                 tavoloTipo.cambiaTavoloNumero(tavolo1.numeroTavolo);
                                 tavoloTipo.coloreVerde();
                                 _primi = true;
@@ -277,7 +370,7 @@ namespace progettoRistorante
                         case 2:
                             if (!_secondi)
                             {
-                                tavoloTipo = new CCTavoloTipo();
+                                tavoloTipo = new TavoloTipo();
                                 tavoloTipo.cambiaTipo(-1);
                                 tavoloTipo.cambiaTavoloNumero(tavolo1.numeroTavolo);
                                 tavoloTipo.coloreVerde();
@@ -289,8 +382,9 @@ namespace progettoRistorante
                         case 3:
                             if (!_dolci)
                             {
-                                tavoloTipo = new CCTavoloTipo();
+                                tavoloTipo = new TavoloTipo();
                                 tavoloTipo.cambiaTipo(-1);
+
                                 tavoloTipo.cambiaTavoloNumero(tavolo1.numeroTavolo);
                                 tavoloTipo.coloreVerde();
                                 _dolci = true;
@@ -319,7 +413,6 @@ namespace progettoRistorante
                     tavolos.Add(tavolo);
                 }
             }
-            Trace.WriteLine(tavolos.Count);
             return tavolos;
         }
 

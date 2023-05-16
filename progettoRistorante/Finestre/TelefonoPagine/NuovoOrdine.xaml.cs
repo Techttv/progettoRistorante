@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using progettoRistorante.Classes;
 
 namespace progettoRistorante.Finestre.TelefonoPagine
 {
@@ -36,6 +37,11 @@ namespace progettoRistorante.Finestre.TelefonoPagine
 
             lbl_numero_piatti.Content = tavolo.ordine.Count;
             numeroPiatti = tavolo.ordine.Count;
+
+        }
+
+        private void ComboBox_DropDownOpened(object sender, EventArgs e)
+        {
             cmb_tavoli.Items.Clear();
             for (int i = 1; i <= MainWindow.tavoli.Count; i++)
             {
@@ -44,10 +50,6 @@ namespace progettoRistorante.Finestre.TelefonoPagine
                     cmb_tavoli.Items.Add(i.ToString());
                 }
             }
-        }
-
-        private void ComboBox_DropDownOpened(object sender, EventArgs e)
-        {
         }
 
         private void caricaMenu()
@@ -100,9 +102,16 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             {
                 if (piatto.desc.Equals(piattoNome)&&piatto.quantita>0)
                 {
-                    tavolo.aggiungiPiatto(piatto);
+                    Piatto piattoNuovo= new Piatto(piatto.desc, piatto.tipo);
+                    piattoNuovo.Disponibile();
+                    piattoNuovo.tavolo = int.Parse(cmb_tavoli.SelectedItem.ToString());
+                    piattoNuovo.prezzo = piatto.prezzo;
+
+                    piatto.Disponibile();
+                    tavolo.aggiungiPiatto(piattoNuovo);
                     btn_avanti.Visibility = Visibility.Visible;
                     btn_avanti.IsEnabled = true;
+
                     if (hasChanged_)
                     {
                         btn_avanti.Opacity = 0;

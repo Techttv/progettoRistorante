@@ -2,17 +2,11 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="CCTavoloTipo.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="fornello.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="CCTavoloTipo.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="fornello.xaml">
       <SubType>Designer</SubType>
     </Page>

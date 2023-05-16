@@ -16,6 +16,7 @@ using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using progettoRistorante.Classes;
 
 namespace progettoRistorante.Finestre.TelefonoPagine
 {
@@ -183,7 +184,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
                         if (tavolo.numeroTavolo == int.Parse(cmb_tavoli.SelectedItem.ToString()))
                         {
                             piatto.quantita++;
-                            tavolo.rimuoviPiatto(piatto);
+                            tavolo.rimuoviPiatto(piatto,"m");
                             totale -= piatto.prezzo;
                             numeroPiatti--;
                             lbl_numero_piatti.Content = numeroPiatti;
@@ -246,12 +247,17 @@ namespace progettoRistorante.Finestre.TelefonoPagine
                 ricarica();
             }
 
-            foreach (PiattoMenu elemento in MainWindow.menu)
+            foreach (PiattoMenu piatto in MainWindow.menu)
             {
-                if (elemento.desc.Equals(nomepiatto)&&elemento.quantita>0)
+                if (piatto.desc.Equals(nomepiatto)&&piatto.quantita>0)
                 {
-                    elemento.quantita--;
-                    tavolo.aggiungiPiatto(elemento);
+                    Piatto piattoNuovo = new Piatto(piatto.desc, piatto.tipo);
+                    piattoNuovo.Disponibile();
+                    piattoNuovo.tavolo = tavolo.numeroTavolo;
+                    piattoNuovo.prezzo = piatto.prezzo;
+
+                    piatto.quantita--;
+                    tavolo.aggiungiPiatto(piattoNuovo);
                     numeroPiatti++;
                     btn_avanti.Visibility = Visibility.Visible;
                     btn_avanti.IsEnabled = true;

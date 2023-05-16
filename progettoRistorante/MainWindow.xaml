@@ -4,7 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         mc:Ignorable="d"
-        Title="Ristorante" Height="800" Width="1000" LayoutUpdated="Home_LayoutUpdated" SizeChanged="Home_SizeChanged" Initialized="Home_Initialized" ResizeMode="NoResize" GotFocus="Home_GotFocus">
+        Title="Ristorante" Height="800" Width="1000" LayoutUpdated="Home_LayoutUpdated" SizeChanged="Home_SizeChanged" Initialized="Home_Initialized" ResizeMode="NoResize" GotFocus="Home_GotFocus" WindowStartupLocation="Manual" Left="800" Top="150">
     <Window.Resources>
         <Style x:Key="lbl_header" TargetType="{x:Type Label}">
             <Setter Property="Foreground" Value="{DynamicResource Verde scuro}"/>

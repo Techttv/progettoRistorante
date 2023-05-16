@@ -12,7 +12,7 @@
         <System:Double x:Key="FinestraHeight">25</System:Double>
     </UserControl.Resources>
     <Grid Margin="35,0,0,0">
-        <TextBlock x:Name="txt_statdesc" FontSize="15"  Foreground="#FFEDF1D6" Text="aaaaa" VerticalAlignment="Center" TextWrapping="Wrap" Margin="5,0,28,0" FontFamily="{DynamicResource SFPro Regular Display}"/>
+        <TextBlock x:Name="txt_statdesc" FontSize="15"  Foreground="#FFEDF1D6" Text="" VerticalAlignment="Center" TextWrapping="Wrap" Margin="5,0,28,0" FontFamily="{DynamicResource SFPro Regular Display}"/>
         <Image x:Name="icon_statimage" Source="/Icon/Disponibile_icon.png" HorizontalAlignment="Right" VerticalAlignment="Center" Width="20" Height="20" Margin="0,3,4,3"/>
     </Grid>
 </UserControl>

@@ -15,6 +15,8 @@
     <None Remove="Icon\DaFare_icon.png" />
     <None Remove="Icon\Disponibile_icon.png" />
     <None Remove="Icon\fastForward.png" />
+    <None Remove="Icon\fastForward_verde.png" />
+    <None Remove="Icon\fastForward_verdechiaro.png" />
     <None Remove="Icon\Finito_icon.png" />
     <None Remove="Icon\food.png" />
     <None Remove="Icon\icon _add.png" />
@@ -112,6 +114,12 @@
     <Resource Include="Icon\fastForward.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Icon\fastForward_verde.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\fastForward_verdechiaro.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icon\Finito_icon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -162,7 +170,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Update="UserControl\fornelloVista.xaml.cs">
+    <Compile Update="UserControllers\TavoloTipo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControllers\fornelloVista.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -178,10 +189,10 @@
     <Page Update="Finestre\TelefonoPagine\ModificaOrdine.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
-    <Page Update="ModificaTavoli.xaml">
+    <Page Update="UserControllers\ModificaTavoli.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
-    <Page Update="UserControl\fornelloVista.xaml">
+    <Page Update="UserControllers\fornelloVista.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:progettoRistorante.Finestre"
         xmlns:cc="clr-namespace:CCStatusOrder;assembly=CCStatusOrder"
         mc:Ignorable="d"
-        Title="VistaCucina" Height="350" Width="600" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" Background="Transparent">
+        Title="VistaCucina" Height="370" Width="600" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" Background="Transparent" Left="50" Top="670">
     <Grid>
         <Border BorderBrush="{DynamicResource Verde scuro}" BorderThickness="5" CornerRadius="5">
             <Border.Background>

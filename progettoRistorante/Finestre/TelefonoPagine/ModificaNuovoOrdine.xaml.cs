@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using progettoRistorante.Classes;
 
 namespace progettoRistorante.Finestre.TelefonoPagine
 {
@@ -36,7 +37,6 @@ namespace progettoRistorante.Finestre.TelefonoPagine
 
             frame.BeginAnimation(UIElement.OpacityProperty, doubleAnimation);
 
-            Trace.WriteLine(tavolo.numeroTavolo);
 
             //La label col numero dei piatti è uguale ai piatti al suo interno che però dovrebbe essere vuoto
             lbl_numero_piatti.Content = tavolo.ordine.Count;
@@ -114,10 +114,15 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             {
                 if (piatto.desc.Equals(piattoNome)&&piatto.quantita>0)
                 {
+                    Piatto piattoNuovo = new Piatto(piatto.desc, piatto.tipo);
+                    piattoNuovo.Disponibile();
+                    piattoNuovo.tavolo = tavolo.numeroTavolo;
+                    piattoNuovo.prezzo = piatto.prezzo;
+
                     numeroPiatti++;
                     piatto.quantita--;
                     lbl_numero_piatti.Content = numeroPiatti;
-                    tavolo.aggiungiPiatto(piatto);
+                    tavolo.aggiungiPiatto(piattoNuovo);
                     btn_avanti.Visibility = Visibility.Visible;
                     btn_avanti.IsEnabled = true;
                     if (hasChanged_)
