@@ -30,18 +30,24 @@ namespace CCStatusOrder
         {
             lbl_desc.Content = desc;
         }
+        public void cambiaTavolo(int tavolo)
+        {
+            if(tavolo != 0) {
+                lbl_tavolo.Content = "Tavolo n°" + tavolo;
+                    }
+        }
 
         public void Disponibile()
         {
             Resources["RectangleColorPreparazione"] = Resources["RectangleColorDisponibile"];
-            icona_status.Source = new BitmapImage(new Uri("/progettoRistorante;component/Icon/Disponibile_icon.png", UriKind.Relative));
+            icona_status.Source = new BitmapImage(new Uri("/icon/Disponibile_icon.png", UriKind.Relative));
         
         }
 
         public void inPreparazione()
         {
             Resources["RectangleColorPreparazione"] = Resources["RectangleColorInCorso"];
-            icona_status.Source = new BitmapImage(new Uri("/progettoRistorante;component/Icon/Preparazione.png", UriKind.Relative));
+            icona_status.Source = new BitmapImage(new Uri("/icon/Preparazione_icon.png", UriKind.Relative));
             id = 1;
             lbl_status.Content = "In corso";
         }
@@ -49,7 +55,7 @@ namespace CCStatusOrder
         public void Finito()
         {
             Resources["RectangleColorPreparazione"] = Resources["RectangleColorPronto"];
-            icona_status.Source = new BitmapImage(new Uri("/progettoRistorante;component/Icon/DaFare_icon.png", UriKind.Relative));
+            icona_status.Source = new BitmapImage(new Uri("/icon/DaFare_icon.png", UriKind.Relative));
             id = 2;
             lbl_status.Content = "Finito";
         }

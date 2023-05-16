@@ -22,7 +22,7 @@ namespace progettoRistorante.Finestre
     /// </summary>
     public partial class VistaCucina : Window
     {
-        private static List<fornelloVista> fornelli = new List<fornelloVista>();
+        public static List<fornelloVista> fornelli = new List<fornelloVista>();
         public VistaCucina()
         {
             InitializeComponent();
@@ -44,6 +44,7 @@ namespace progettoRistorante.Finestre
             stack_fornelli.Children.Add(fornello);
             Properties.Settings.Default.NumeroFornelli++ ;
             Properties.Settings.Default.Save();
+            MainWindow.ricarica();
             preparaPiatto();
         }
         private void rimuoviFornello(object sender, RoutedEventArgs e)
@@ -61,6 +62,7 @@ namespace progettoRistorante.Finestre
                     GestioneOrdini.aggiungiOrdine(piattoMenu, piattoMenu.tipo);
                 }
             }
+            MainWindow.ricarica();
         }
 
         public static void preparaPiatto()

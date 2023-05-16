@@ -43,8 +43,6 @@ namespace progettoRistorante.UserControllers
             lbl_tavolo.Content = "Tavolo n°" + tavRef;
         }
 
-
-
         public void Disponibile()
         {
             this.Resources["RectangleColorPreparazione"] = this.Resources["RectangleColorDisponibile"];
@@ -97,7 +95,7 @@ namespace progettoRistorante.UserControllers
             }
         }
 
-        private void Finito(Object sender, EventArgs e)
+        public void Finito(Object sender, EventArgs e)
         {
             stopWatch.Stop();
             this.Resources["RectangleColorPreparazione"] = this.Resources["RectangleColorPronto"];
@@ -149,6 +147,7 @@ namespace progettoRistorante.UserControllers
                     MainWindow.tavoli[tavRef - 1].rimuoviPiatto(piatto, "");
                 }
             }
+            tavRef = 0;
             Disponibile();
             VistaCucina.preparaPiatto();
             MainWindow.ricarica();

@@ -83,7 +83,7 @@ namespace progettoRistorante.UserControllers
 
         private void btn_skip_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Trace.Write(numeroTavolo);
+            
             foreach(Tavolo tavolo in MainWindow.tavoli)
             {
                 if(tavolo.numeroTavolo== numeroTavolo)

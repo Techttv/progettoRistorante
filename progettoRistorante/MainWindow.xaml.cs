@@ -21,7 +21,7 @@ namespace progettoRistorante
         public static List<PiattoMenu> menu = new List<PiattoMenu>();
         public static List<Tavolo> tavoli = new List<Tavolo>();
         public bool open = false;
-        public static StackPanel ordiniGrid, colonnaPrimi, colonnaSecondi, colonnaDolci;
+        public static StackPanel ordiniGrid, colonnaPrimi, colonnaSecondi, colonnaDolci, stack_fornelliMain;
         public static WrapPanel wraptavoli;
         private ModificaTavoli CCModificaTavoli;
 
@@ -41,12 +41,8 @@ namespace progettoRistorante
             caricaMenu();
             ordiniGrid = ordini_grid; colonnaPrimi = scroll_colonnaPrimi; colonnaSecondi = scroll_colonnaSecondi; colonnaDolci = scroll_colonnaDolci;
             wraptavoli = wrap_tavoli;
-
-            for (int i = 0; i < 10; i++)
-            {
-                stack_fornelli.Children.Add(new fornello()); 
-            }
-
+            stack_fornelliMain = stack_fornelli;
+            ricarica();
         }
 
         private void Home_LayoutUpdated(object sender, EventArgs e)
@@ -82,6 +78,8 @@ namespace progettoRistorante
                 tavoli.Add(tavolo);
                 ordini_grid.Children.Add(TavoloTipo);
             }
+            
+
         }
 
         private void btn_ordini_Click(object sender, RoutedEventArgs e)
@@ -200,6 +198,7 @@ namespace progettoRistorante
             colonnaPrimi.Children.Clear();
             colonnaSecondi.Children.Clear();
             colonnaDolci.Children.Clear();
+            stack_fornelliMain.Children.Clear();
             foreach (Tavolo tavolo in tavoli)
             {
                 tavoloTipo = new TavoloTipo();
@@ -219,7 +218,6 @@ namespace progettoRistorante
                     }
                     piattoStatus = new piattoStatus();
                     piattoStatus.CambiaTesto(piatto.desc);
-                    Trace.WriteLine(piatto.desc + " " + piatto.Status);
                     switch (piatto.Status)
                     {
                         case 1:
@@ -317,8 +315,27 @@ namespace progettoRistorante
                         ordiniGrid.Children.Add(piattoStatus);
                     }
                 }
+                
 
-
+            }
+            foreach (fornelloVista FornelloVista in VistaCucina.fornelli)
+            {
+                fornello fornelloNuovo = new fornello();
+                switch (FornelloVista.status)
+                {
+                    case 0:
+                        fornelloNuovo.Disponibile();
+                        break;
+                    case 1:
+                        fornelloNuovo.inPreparazione();
+                        break;
+                    case 2:
+                        fornelloNuovo.Finito();
+                        break;
+                }
+                fornelloNuovo.cambiaDesc(FornelloVista.lbl_desc.Content.ToString());
+                fornelloNuovo.cambiaTavolo(FornelloVista.tavRef);
+                stack_fornelliMain.Children.Add(fornelloNuovo);
             }
 
             foreach (Tavolo tavolo1 in findTavoliOccupati())

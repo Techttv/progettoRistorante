@@ -13,7 +13,7 @@ namespace progettoRistorante.Classes
 {
     public class Tavolo
     {
-        public DispatcherTimer timer,everyminute;
+        public DispatcherTimer timer;
         public int numeroTavolo { get; set; }
         public int status { get; set; }
         public List<Piatto> ordine = new List<Piatto>();
@@ -57,7 +57,8 @@ namespace progettoRistorante.Classes
 
         public void rimuoviPiatto(Piatto piatto,string m)
         {
-            var n = 0;
+            var piattiArrivati = 0; 
+            var tuttiArrivati=0;
             
             if (m.Length > 0)
             {
@@ -70,13 +71,17 @@ namespace progettoRistorante.Classes
                 piatto.Status = 0;
                 foreach (Piatto piatto1 in ordine)
                 {
-                    if (piatto1.tipo == piatto.tipo)
+                    if (piatto.tipo == piatto1.tipo && piatto1.Status != 0)
                     {
-                        n++;
+                        piattiArrivati++;
+                    }
+                    if (piatto1.Status == 0 || piatto1.tipo == 4)
+                    {
+                        tuttiArrivati++;
                     }
                 }
-                Trace.WriteLine(n);
-                if (n == 0)
+                int numeroPiatti = MainWindow.tavoli.ElementAt(piatto.tavolo-1).ordine.Count;
+                if (piattiArrivati == 0&&numeroPiatti!=tuttiArrivati)
                 {
                     Arrivati();
                 }
@@ -119,7 +124,7 @@ namespace progettoRistorante.Classes
             int tuttoFinito=0;
             foreach(Piatto piatto in ordine)
             {
-                if (piatto.Status == 0&&piatto.tipo==)
+                if (piatto.Status == 0&&piatto.tipo!=4)
                 {
                     tuttoFinito++;
                 }
@@ -133,9 +138,6 @@ namespace progettoRistorante.Classes
                 timer.Start();
                 canSkip = true;
 
-                everyminute = new DispatcherTimer();
-                everyminute.Interval = new TimeSpan(0,1,0);
-                everyminute.Tick += (s, e) => { Trace.WriteLine(timer.IsEnabled); };
                 MainWindow.ricarica();
                 sel = 0;
             }

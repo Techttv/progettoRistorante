@@ -109,7 +109,7 @@
                     </ScrollViewer>
                 </Grid>
             </Border>
-            <Border BorderThickness="3,3,3,3" CornerRadius="13" BorderBrush="#FF609966" Width="412" Height="176" Margin="112,18,0,42" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0,0,0,0" >
+            <Border BorderThickness="3,3,3,3" CornerRadius="13" BorderBrush="#FF609966" Width="412" Height="185" Margin="112,18,0,42" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0,0,0,0" >
                 <ScrollViewer Style="{DynamicResource ScrollViewerStyleTable1}" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
                     <StackPanel Orientation="Horizontal" x:Name="stack_fornelli" Height="160" CanHorizontallyScroll="False" Margin="10,0,0,0" >
                         

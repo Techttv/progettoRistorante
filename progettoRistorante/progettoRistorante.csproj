@@ -12,6 +12,7 @@
     <None Remove="Font\merchant.ttf" />
     <None Remove="Icon\Aggiungi.png" />
     <None Remove="Icon\back.png" />
+    <None Remove="Icon\cartaDiCredito.png" />
     <None Remove="Icon\DaFare_icon.png" />
     <None Remove="Icon\Disponibile_icon.png" />
     <None Remove="Icon\fastForward.png" />
@@ -105,6 +106,9 @@
     </Content>
     <Resource Include="Icon\Aggiungi.png" />
     <Resource Include="Icon\back.png" />
+    <Resource Include="Icon\cartaDiCredito.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icon\DaFare_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -140,7 +144,7 @@
     <Resource Include="Icon\Modifica.png" />
     <Resource Include="Icon\Paga.png" />
     <Resource Include="Icon\Pentola.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icon\Preparazione_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -165,6 +169,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Finestre\TelefonoPagine\contactless.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
