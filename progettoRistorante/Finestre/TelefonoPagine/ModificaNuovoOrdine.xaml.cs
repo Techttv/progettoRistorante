@@ -118,6 +118,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
                     piattoNuovo.Disponibile();
                     piattoNuovo.tavolo = tavolo.numeroTavolo;
                     piattoNuovo.prezzo = piatto.prezzo;
+                    piattoNuovo.id = piatto.id;
 
                     numeroPiatti++;
                     piatto.quantita--;

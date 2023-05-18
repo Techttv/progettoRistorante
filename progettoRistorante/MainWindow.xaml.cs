@@ -200,7 +200,9 @@ namespace progettoRistorante
                 line = sr.ReadLine();
                 string[] colonne = line.Split(';');
                 piatto = new PiattoMenu(colonne[1], int.Parse(colonne[0]), int.Parse(colonne[3]), int.Parse(colonne[4]));
+                piatto.quantita = int.Parse(colonne[5]);
                 piatto.prezzo = double.Parse(colonne[2]);
+                piatto.id = int.Parse(colonne[6]);
                 menu.Add(piatto);
 
             }

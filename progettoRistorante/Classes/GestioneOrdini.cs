@@ -23,37 +23,42 @@ namespace progettoRistorante.Classes
                 }
             }
             foreach (Piatto piatto in temp)
-                foreach (PiattoMenu piattoMenu in MainWindow.menu)
+            {
+                PiattoMenu piattoNuovo = new PiattoMenu(MainWindow.menu.ElementAt(piatto.id).desc, MainWindow.menu.ElementAt(piatto.id).tipo, MainWindow.menu.ElementAt(piatto.id).quantita, MainWindow.menu.ElementAt(piatto.id).tempoDiCottura);
+                piattoNuovo.Disponibile();
+                piattoNuovo.prezzo = MainWindow.menu.ElementAt(piatto.id).prezzo;
+                piattoNuovo.id = piatto.id;
+
+                piatto.Disponibile();
+                if (piatto.desc.Equals(MainWindow.menu.ElementAt(piatto.id).desc) && !piatto.inQueue)
                 {
-                    if (piatto.desc.Equals(piattoMenu.desc)&&!piatto.inQueue)
+                    piatto.tavolo = tavolo.numeroTavolo;
+                    switch (piatto.tipo)
                     {
-                        piatto.tavolo = tavolo.numeroTavolo;
-                        switch (piatto.tipo)
-                        {
-                            case 1:
-                                if (tipo == 1)
-                                {
-                                    piatto.inQueue = true;
-                                    primi.Enqueue(piatto);
-                                }
-                                break;
-                            case 2:
-                                if (tipo == 2)
-                                {
-                                    piatto.inQueue = true;
-                                    secondi.Enqueue(piatto);
-                                }
-                                break;
-                            case 3:
-                                if (tipo == 3)
-                                {
-                                    piatto.inQueue = true;
-                                    dolci.Enqueue(piatto);
-                                }
-                                break;
-                        }
+                        case 1:
+                            if (tipo == 1)
+                            {
+                                piatto.inQueue = true;
+                                primi.Enqueue(piatto);
+                            }
+                            break;
+                        case 2:
+                            if (tipo == 2)
+                            {
+                                piatto.inQueue = true;
+                                secondi.Enqueue(piatto);
+                            }
+                            break;
+                        case 3:
+                            if (tipo == 3)
+                            {
+                                piatto.inQueue = true;
+                                dolci.Enqueue(piatto);
+                            }
+                            break;
                     }
                 }
+            }
         }
 
         public static void aggiungiOrdine(Piatto piatto, int tipo)

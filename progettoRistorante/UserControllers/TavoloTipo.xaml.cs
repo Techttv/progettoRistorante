@@ -89,6 +89,7 @@ namespace progettoRistorante.UserControllers
                 if(tavolo.numeroTavolo== numeroTavolo)
                 {
                     tavolo.skip();
+                    break;
                 }
             }
         }

@@ -57,10 +57,8 @@ namespace progettoRistorante.Classes
 
         public void rimuoviPiatto(Piatto piatto,string m)
         {
-            var piattiArrivati = 0; 
-            var tuttiArrivati=0;
             
-            if (m.Length > 0)
+            if (m=="m")
             {
                 ordine.Remove(piatto);
                 totale -= piatto.prezzo;
@@ -69,23 +67,42 @@ namespace progettoRistorante.Classes
             else
             {
                 piatto.Status = 0;
-                foreach (Piatto piatto1 in ordine)
+                int prossimo = prossimoTipo();
+                Arrivati(prossimo);
+            }
+        }
+
+        private int prossimoTipo()
+        {
+            int primiArrivati = 0, secondiArrivati = 0, dolciArrivati = 0;
+            foreach (Piatto piatto1 in ordine)
+            {
+                if (piatto1.tipo == 1 && piatto1.Status != 0)
                 {
-                    if (piatto.tipo == piatto1.tipo && piatto1.Status != 0)
-                    {
-                        piattiArrivati++;
-                    }
-                    if (piatto1.Status == 0 || piatto1.tipo == 4)
-                    {
-                        tuttiArrivati++;
-                    }
+                    primiArrivati++;
                 }
-                int numeroPiatti = MainWindow.tavoli.ElementAt(piatto.tavolo-1).ordine.Count;
-                if (piattiArrivati == 0&&numeroPiatti!=tuttiArrivati)
+                if (piatto1.tipo == 2 && piatto1.Status != 0)
                 {
-                    Arrivati();
+                    secondiArrivati++;
+                }
+                if (piatto1.tipo == 3 && piatto1.Status != 0)
+                {
+                    dolciArrivati++;
                 }
             }
+            if (primiArrivati == 0&&primo)
+            {
+                return 1;
+            }
+            else if (secondiArrivati == 0&&secondo)
+            {
+                return 2;
+            }
+            else if (dolciArrivati == 0&&dolce)
+            {
+                return 3;
+            }
+            return 0;
         }
 
         public void cambiaStatus(int status)
@@ -113,55 +130,38 @@ namespace progettoRistorante.Classes
             return totale;
         }
 
-        public void Arrivati()
+        public void Arrivati(int tipo)
         {
-            if (secondo == true)
+            if (tipo == 3)
             {
-                sel = 2;
-                secondo = false;
+                return;
             }
-            else if (dolce==true) 
-            {
-                sel = 3; dolce = false; 
-            }
-            int tuttoFinito=0;
-            foreach(Piatto piatto in ordine)
-            {
-                if (piatto.Status == 0&&piatto.tipo!=4)
-                {
-                    tuttoFinito++;
-                }
-            }
-
-            if (sel>1&&tuttoFinito!=0)
+            if (tipo != 0)
             {
                 timer = new DispatcherTimer();
                 timer.Interval = new TimeSpan(0, 15, 0);
-                timer.Tick += (s, e) => { GestioneOrdini.aggiungiOrdine(this, sel); VistaCucina.preparaPiatto(); Arrivati(); };
+                timer.Tick += (s, e) => { GestioneOrdini.aggiungiOrdine(this, tipo++); VistaCucina.preparaPiatto(); };
                 timer.Start();
                 canSkip = true;
+            }
+
+
 
                 MainWindow.ricarica();
-                sel = 0;
-            }
-            else
-            {
-                canSkip = false;
-            }
 
         }
 
         public void skip()
         {
             timer.Stop();
-            if (secondo == false)
-            {
-                sel = 2;
-                secondo = true;
-            }
-            else { sel = 3; dolce = true; }
+            int attuale = prossimoTipo();
             canSkip = false;
-            GestioneOrdini.aggiungiOrdine(this, sel);
+            if (attuale == 3)
+            {
+                return;
+            }
+            attuale++;
+            GestioneOrdini.aggiungiOrdine(this, attuale);
             VistaCucina.preparaPiatto();
             MainWindow.ricarica();
         }

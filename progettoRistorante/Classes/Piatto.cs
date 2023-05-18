@@ -11,6 +11,7 @@ namespace progettoRistorante.Classes
 {
     public class Piatto
     {
+        public int id { get; set; }
         public string desc { get; set; }
         public int Status { get; set; }
 

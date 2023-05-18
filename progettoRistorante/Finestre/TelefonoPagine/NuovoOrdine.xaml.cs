@@ -106,6 +106,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
                     piattoNuovo.Disponibile();
                     piattoNuovo.tavolo = int.Parse(cmb_tavoli.SelectedItem.ToString());
                     piattoNuovo.prezzo = piatto.prezzo;
+                    piattoNuovo.id = piatto.id;
 
                     piatto.Disponibile();
                     tavolo.aggiungiPiatto(piattoNuovo);
