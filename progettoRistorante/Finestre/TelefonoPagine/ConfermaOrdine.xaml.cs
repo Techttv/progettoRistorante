@@ -30,7 +30,24 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             NuovoOrdine.tavolo.cambiaStatus(1);
             MainWindow.tavoli.RemoveAt(NuovoOrdine.tavolo.numeroTavolo - 1);
             MainWindow.tavoli.Insert(NuovoOrdine.tavolo.numeroTavolo - 1, NuovoOrdine.tavolo);
-            GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 1);
+            foreach(Piatto piatto in NuovoOrdine.tavolo.ordine)
+            {
+                if (piatto.tipo == 1 && piatto.Status == 3)
+                {
+                    GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 1);
+                    break ;
+                }
+                else if( piatto.tipo ==2&&piatto.Status==3)
+                {
+                    GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 2);
+                    break;
+                }
+                else if (piatto.tipo == 3 && piatto.Status == 3)
+                {
+                    GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 3);
+                    break;
+                }
+            }
             VistaCucina.preparaPiatto();
             NuovoOrdine.tavolo = new Tavolo();
             ModificaNuovoOrdine.tavolo = new Tavolo();

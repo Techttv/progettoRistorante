@@ -68,7 +68,10 @@ namespace progettoRistorante.Classes
             {
                 piatto.Status = 0;
                 int prossimo = prossimoTipo();
-                Arrivati(prossimo);
+                if (prossimo != 0)
+                {
+                    Arrivati(prossimo);
+                }
             }
         }
 
@@ -132,18 +135,15 @@ namespace progettoRistorante.Classes
 
         public void Arrivati(int tipo)
         {
-            if (tipo == 3)
+            if (tipo == 4||tipo<1)
             {
                 return;
             }
-            if (tipo != 0)
-            {
                 timer = new DispatcherTimer();
                 timer.Interval = new TimeSpan(0, 15, 0);
                 timer.Tick += (s, e) => { GestioneOrdini.aggiungiOrdine(this, tipo++); VistaCucina.preparaPiatto(); };
                 timer.Start();
                 canSkip = true;
-            }
 
 
 
@@ -156,7 +156,7 @@ namespace progettoRistorante.Classes
             timer.Stop();
             int attuale = prossimoTipo();
             canSkip = false;
-            if (attuale == 3)
+            if (attuale == 4)
             {
                 return;
             }

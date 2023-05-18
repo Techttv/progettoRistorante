@@ -17,7 +17,7 @@ namespace progettoRistorante.Classes
             List<Piatto> temp = new List<Piatto>();
             foreach (Piatto piatto in tavolo.ordine)
             {
-                if (!temp.Contains(piatto))
+                if (!temp.Contains(piatto)&&piatto.tipo==tipo&&piatto.Status==3&&!piatto.inQueue)
                 {
                     temp.Add(piatto);
                 }
@@ -33,28 +33,17 @@ namespace progettoRistorante.Classes
                 if (piatto.desc.Equals(MainWindow.menu.ElementAt(piatto.id).desc) && !piatto.inQueue)
                 {
                     piatto.tavolo = tavolo.numeroTavolo;
+                    piatto.inQueue=true;
                     switch (piatto.tipo)
                     {
                         case 1:
-                            if (tipo == 1)
-                            {
-                                piatto.inQueue = true;
                                 primi.Enqueue(piatto);
-                            }
                             break;
                         case 2:
-                            if (tipo == 2)
-                            {
-                                piatto.inQueue = true;
                                 secondi.Enqueue(piatto);
-                            }
                             break;
                         case 3:
-                            if (tipo == 3)
-                            {
-                                piatto.inQueue = true;
                                 dolci.Enqueue(piatto);
-                            }
                             break;
                     }
                 }

@@ -50,16 +50,19 @@ namespace progettoRistorante.Finestre
         private void rimuoviFornello(object sender, RoutedEventArgs e)
         {
             fornelloVista f1;
-            f1 = fornelli.ElementAt(fornelli.Count - 1);
-            fornelli.RemoveAt(fornelli.Count - 1);
-            stack_fornelli.Children.RemoveAt(stack_fornelli.Children.Count-1);
-            Properties.Settings.Default.NumeroFornelli--;
-            Properties.Settings.Default.Save();
-            foreach (PiattoMenu piattoMenu in MainWindow.menu)
+            if (fornelli.Count > 0)
             {
-                if (piattoMenu.desc.Equals(f1.lbl_desc.Content))
+                f1 = fornelli.ElementAt(fornelli.Count - 1);
+                fornelli.RemoveAt(fornelli.Count - 1);
+                stack_fornelli.Children.RemoveAt(stack_fornelli.Children.Count - 1);
+                Properties.Settings.Default.NumeroFornelli--;
+                Properties.Settings.Default.Save();
+                foreach (PiattoMenu piattoMenu in MainWindow.menu)
                 {
-                    GestioneOrdini.aggiungiOrdine(piattoMenu, piattoMenu.tipo);
+                    if (piattoMenu.desc.Equals(f1.lbl_desc.Content))
+                    {
+                        GestioneOrdini.aggiungiOrdine(piattoMenu, piattoMenu.tipo);
+                    }
                 }
             }
             MainWindow.ricarica();

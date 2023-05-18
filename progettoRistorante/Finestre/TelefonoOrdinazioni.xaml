@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:progettoRistorante.Finestre"
         mc:Ignorable="d"
-        Title="TelefonoOrdinazioni" Height="640" Width="360" ResizeMode="NoResize" Background="{DynamicResource BiancoPanna}" Left="200" Top="20">
+        Title="TelefonoOrdinazioni" Height="640" Width="360" ResizeMode="CanMinimize" Background="{DynamicResource BiancoPanna}" Left="200" Top="20">
     <Window.Resources>
 
     </Window.Resources>
