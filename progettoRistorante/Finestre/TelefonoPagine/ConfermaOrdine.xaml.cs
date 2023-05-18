@@ -32,26 +32,45 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             MainWindow.tavoli.Insert(NuovoOrdine.tavolo.numeroTavolo - 1, NuovoOrdine.tavolo);
             foreach(Piatto piatto in NuovoOrdine.tavolo.ordine)
             {
-                if (piatto.tipo == 1 && piatto.Status == 3)
+                if (piatto.tipo == 1 && piatto.Status >1)
                 {
                     GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 1);
-                    break ;
+                    VistaCucina.preparaPiatto();
+                    NuovoOrdine.tavolo = new Tavolo();
+                    ModificaNuovoOrdine.tavolo = new Tavolo();
+                    MainWindow.ricarica();
+                    return;
                 }
-                else if( piatto.tipo ==2&&piatto.Status==3)
+
+            }
+            foreach(Piatto piatto in NuovoOrdine.tavolo.ordine)
+            {
+                if (piatto.tipo == 2 && piatto.Status > 1)
                 {
                     GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 2);
-                    break;
-                }
-                else if (piatto.tipo == 3 && piatto.Status == 3)
-                {
-                    GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 3);
-                    break;
+                    VistaCucina.preparaPiatto();
+                    NuovoOrdine.tavolo = new Tavolo();
+                    ModificaNuovoOrdine.tavolo = new Tavolo();
+                    MainWindow.ricarica();
+                    return;
                 }
             }
-            VistaCucina.preparaPiatto();
-            NuovoOrdine.tavolo = new Tavolo();
-            ModificaNuovoOrdine.tavolo = new Tavolo();
-            MainWindow.ricarica();
+
+            foreach (Piatto piatto in NuovoOrdine.tavolo.ordine)
+            {
+
+                if (piatto.tipo == 3 && piatto.Status > 1)
+                {
+                    GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 3);
+                    VistaCucina.preparaPiatto();
+                    NuovoOrdine.tavolo = new Tavolo();
+                    ModificaNuovoOrdine.tavolo = new Tavolo();
+                    MainWindow.ricarica();
+                    return;
+                }
+            }
+
+            
         }
 
         private void stampaScontrinoProvvisorio()

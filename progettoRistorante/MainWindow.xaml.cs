@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Timer = System.Timers.Timer;
 using progettoRistorante.UserControllers;
+using PdfSharp.Fonts;
 
 namespace progettoRistorante
 {
@@ -29,6 +30,7 @@ namespace progettoRistorante
 
         public MainWindow()
         {
+            GlobalFontSettings.FontResolver = new MyFontResolver();
             InitializeComponent();
             CCModificaTavoli = new ModificaTavoli(tavoli.Count, Home.Height, Home.Width) { f1 = this };
 

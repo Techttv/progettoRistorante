@@ -26,7 +26,7 @@ namespace progettoRistorante.Finestre
 
         public TelefonoOrdinazioni()
         {
-            GlobalFontSettings.FontResolver = new MyFontResolver();
+            
             InitializeComponent();
             Home.Content = new Home(Home) ;
         }

@@ -13,7 +13,7 @@ namespace progettoRistorante.Classes
 {
     public class Tavolo
     {
-        public DispatcherTimer timer;
+        public DispatcherTimer timer = new DispatcherTimer();
         public int numeroTavolo { get; set; }
         public int status { get; set; }
         public List<Piatto> ordine = new List<Piatto>();
