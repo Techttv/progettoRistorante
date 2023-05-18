@@ -1,0 +1,20 @@
+﻿<Page x:Class="progettoRistorante.Finestre.TelefonoPagine.ConfermaPagamento"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:progettoRistorante.Finestre.TelefonoPagine"
+      mc:Ignorable="d" 
+      d:DesignHeight="640" d:DesignWidth="360"
+      Title="ConfermaOrdine">
+
+    <Grid Background="{DynamicResource BiancoPanna}" Loaded="Grid_Loaded">
+        <TextBlock TextWrapping="Wrap" Text="Pagamento avvenuto con successo" FontFamily="{DynamicResource SFPro Regular Italic Display}" FontSize="25" Foreground="{DynamicResource Verde scuro}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,150" FontStyle="Normal"/>
+        <Button x:Name="btn_home" Style="{DynamicResource ButtonStyle1}" Width="184" Height="38" Foreground="{DynamicResource BiancoPanna}" Background="{DynamicResource Verde scuro}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" FontFamily="{DynamicResource SFPro Regular Display}" Content="Torna alla home" FontSize="18" Click="btn_home_Click">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="4" Opacity="0.25" Direction="270"/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Stampa in corso" Style="{DynamicResource LabelStyleCommon}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,150" FontSize="18" Foreground="{DynamicResource Verde chiaro}"></Label>
+    </Grid>
+</Page>

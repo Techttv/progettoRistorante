@@ -5,14 +5,10 @@
       "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
         "type": "package",
         "compile": {
-          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {}
         },
         "runtime": {
-          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -25,14 +21,10 @@
           "System.ValueTuple": "4.5.0"
         },
         "compile": {
-          "lib/net5.0-windows7.0/Notification.Wpf.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/net5.0-windows7.0/Notification.Wpf.dll": {}
         },
         "runtime": {
-          "lib/net5.0-windows7.0/Notification.Wpf.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/net5.0-windows7.0/Notification.Wpf.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -164,28 +156,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tomma\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\19TOMMASOCARICATO\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tomma\\Source\\Repos\\Techttv\\progettoRistorante\\CCTavoli\\CCTavoli.csproj",
+      "projectUniqueName": "C:\\Users\\19TOMMASOCARICATO\\Source\\Repos\\Techttv\\progettoRistorante\\CCTavoli\\CCTavoli.csproj",
       "projectName": "CCTavoli",
-      "projectPath": "C:\\Users\\tomma\\Source\\Repos\\Techttv\\progettoRistorante\\CCTavoli\\CCTavoli.csproj",
-      "packagesPath": "C:\\Users\\tomma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tomma\\Source\\Repos\\Techttv\\progettoRistorante\\CCTavoli\\obj\\",
+      "projectPath": "C:\\Users\\19TOMMASOCARICATO\\Source\\Repos\\Techttv\\progettoRistorante\\CCTavoli\\CCTavoli.csproj",
+      "packagesPath": "C:\\Users\\19TOMMASOCARICATO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\19TOMMASOCARICATO\\Source\\Repos\\Techttv\\progettoRistorante\\CCTavoli\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\tomma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\19TOMMASOCARICATO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0-windows"
+        "net5.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -218,8 +205,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -231,7 +217,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

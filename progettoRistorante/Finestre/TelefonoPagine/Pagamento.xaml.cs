@@ -36,5 +36,10 @@ namespace progettoRistorante.Finestre.TelefonoPagine
         {
             Frame.Content = new Contactless(Frame);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Frame.Content = new ConfermaPagamento(Frame, "Contanti");
+        }
     }
 }

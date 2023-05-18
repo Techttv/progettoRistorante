@@ -5,6 +5,8 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <ApplicationIcon>programma.ico</ApplicationIcon>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +14,7 @@
     <None Remove="Font\merchant.ttf" />
     <None Remove="Icon\Aggiungi.png" />
     <None Remove="Icon\back.png" />
+    <None Remove="Icon\cancellino.png" />
     <None Remove="Icon\cartaDiCredito.png" />
     <None Remove="Icon\DaFare_icon.png" />
     <None Remove="Icon\Disponibile_icon.png" />
@@ -36,34 +39,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Font\Display\SF-Pro-Display-Black.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Font\Display\SF-Pro-Display-BlackItalic.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Font\Display\SF-Pro-Display-Bold.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Font\Display\SF-Pro-Display-BoldItalic.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Font\Display\SF-Pro-Display-Heavy.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Font\Display\SF-Pro-Display-HeavyItalic.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Font\Display\SF-Pro-Display-Light.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Font\Display\SF-Pro-Display-LightItalic.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Font\Display\SF-Pro-Display-Medium.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Font\Display\SF-Pro-Display-MediumItalic.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Font\Display\SF-Pro-Display-Regular.otf">
@@ -78,16 +57,7 @@
     <Content Include="Font\Display\SF-Pro-Display-SemiboldItalic.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Font\Display\SF-Pro-Display-Thin.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Font\Display\SF-Pro-Display-ThinItalic.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Font\Display\SF-Pro-Display-Ultralight.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Font\Display\SF-Pro-Display-UltralightItalic.otf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Font\Gabriola.ttf">
@@ -106,6 +76,9 @@
     </Content>
     <Resource Include="Icon\Aggiungi.png" />
     <Resource Include="Icon\back.png" />
+    <Resource Include="Icon\cancellino.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icon\cartaDiCredito.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -193,6 +166,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Finestre\TelefonoPagine\ConfermaPagamento.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="Finestre\TelefonoPagine\ModificaOrdine.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>

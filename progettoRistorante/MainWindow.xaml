@@ -48,25 +48,21 @@
                 </Border.Effect>
                 <Label Content="Status Ordini" HorizontalAlignment="Center" Height="37" FontSize="20" Foreground="{DynamicResource BiancoPanna}" VerticalAlignment="Top" Margin="0,9,0,0" FontFamily="{DynamicResource SFPro Bold Display}" />
             </Border>
-            <ScrollViewer Style="{DynamicResource ScrollViewerStyle1}" Width="260" MinHeight="250" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="25,0,0,20" Background="{x:Null}" CanContentScroll="True" SnapsToDevicePixels="True" DataContext="{Binding}" VerticalScrollBarVisibility="Visible" Grid.Row="1">
+            <ScrollViewer Style="{DynamicResource ScrollViewerStyle1}" Width="260" MinHeight="200" Margin="24,0,11,0" Background="{x:Null}" CanContentScroll="True" SnapsToDevicePixels="True" DataContext="{Binding}" VerticalScrollBarVisibility="Visible" Grid.Row="1">
                 <StackPanel  x:Name="ordini_grid" CanVerticallyScroll="True">
                 </StackPanel>
             </ScrollViewer>
         </Grid>
-        <Border BorderThickness="5,0,5,5" CornerRadius="0,0,40,40" BorderBrush="#FF609966" Width="500" Height="71" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#ADEDF1D6" UseLayoutRounding="True" ClipToBounds="True">
+        <Border BorderThickness="5,0,5,5" CornerRadius="0,0,40,40" BorderBrush="#FF609966" Height="71" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#ADEDF1D6" UseLayoutRounding="True" ClipToBounds="True">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,0,0,0">
-                <Button Style="{DynamicResource ButtonStyleTopBar}" BorderThickness="0,0,6,0" Padding="10,14,8,0" x:Name="btn_visumenu" Width="120" Margin="0,0,0,0">
-                    <TextBlock Text="Visualizza menu" TextWrapping="Wrap" TextAlignment="Center" Height="54" Width="113" Padding="0,0,13,0" />
+
+                <Button Style="{DynamicResource ButtonStyleTopBar}" BorderThickness="0,0,6,0" Padding="10,20,10,0" x:Name="btn_apri" Click="btn_apri_Click">
+                    <TextBlock Text="Riapri tutte le finestre" TextWrapping="Wrap" TextAlignment="Center" Height="45"></TextBlock>
                 </Button>
-                <Button Style="{DynamicResource ButtonStyleTopBar}" BorderThickness="0,0,6,0" Padding="10,20,10,0" x:Name="btn_modimenu">
-                    <TextBlock Text="Modifica menù" TextWrapping="Wrap" TextAlignment="Center" Height="45"></TextBlock>
-                </Button>
-                <Button Style="{DynamicResource ButtonStyleTopBar}" x:Name="btn_moditavoli" BorderThickness="0,0,6,0" Padding="10,20,10,0" Click="btn_moditavoli_Click">
+                <Button Style="{DynamicResource ButtonStyleTopBar}" x:Name="btn_moditavoli" Padding="10,20,10,0" Click="btn_moditavoli_Click">
                     <TextBlock Text="Modifica tavoli" TextWrapping="Wrap" TextAlignment="Center" Height="45"/>
                 </Button>
-                <Button Style="{DynamicResource ButtonStyleTopBar}" x:Name="btn_archordini" BorderThickness="0" Padding="10,0,15,0">
-                    <TextBlock Text="Archivio ordini" TextWrapping="Wrap" TextAlignment="Center" Height="45" Width="91" Margin="0,6,0,0"></TextBlock>
-                </Button>
+
             </StackPanel>
         </Border>
         <StackPanel>
@@ -85,7 +81,7 @@
                                 <StackPanel>
                                     <Label Style="{DynamicResource lbl_header}" Content="Primi"/>
                                     <StackPanel Height="600" x:Name="scroll_colonnaPrimi" >
-                                        
+
                                     </StackPanel>
                                 </StackPanel>
                             </ScrollViewer>
@@ -112,7 +108,7 @@
             <Border BorderThickness="3,3,3,3" CornerRadius="13" BorderBrush="#FF609966" Width="412" Height="185" Margin="112,18,0,42" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0,0,0,0" >
                 <ScrollViewer Style="{DynamicResource ScrollViewerStyleTable1}" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
                     <StackPanel Orientation="Horizontal" x:Name="stack_fornelli" Height="160" CanHorizontallyScroll="False" Margin="10,0,0,0" >
-                        
+
                     </StackPanel>
                 </ScrollViewer>
             </Border>

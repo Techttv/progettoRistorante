@@ -120,7 +120,10 @@ namespace progettoRistorante.Classes
                 sel = 2;
                 secondo = false;
             }
-            else if (dolce==true) { sel = 3; dolce = false; }
+            else if (dolce==true) 
+            {
+                sel = 3; dolce = false; 
+            }
             int tuttoFinito=0;
             foreach(Piatto piatto in ordine)
             {

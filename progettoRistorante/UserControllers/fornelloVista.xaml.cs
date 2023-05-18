@@ -59,29 +59,37 @@ namespace progettoRistorante.UserControllers
 
         public void inPreparazione()
         {
-            iniziaConteggio();
-
-            //Timer tempo cottura
-            timer = new DispatcherTimer();
-            timer.Tick += new EventHandler(Finito);
-            timer.Interval = new TimeSpan(0, tempoCottura, 0);
-            timer.Start();
-
-            this.Resources["RectangleColorPreparazione"] = this.Resources["RectangleColorInCorso"];
-            icona_status.Source = new BitmapImage(new Uri("/icon/Preparazione_icon.png", UriKind.Relative));
-            lbl_status.Content = "In corso";
-            status = 1;
-            btn_elimina.IsEnabled = true;
-            btn_skip.IsEnabled = true;
-            Tavolo tavolo = MainWindow.tavoli.ElementAt(tavRef - 1);
-            foreach (Piatto piatto in tavolo.ordine)
+            if (tempoCottura > 0)
             {
-                if (piatto.desc.Equals((string)lbl_desc.Content))
+                iniziaConteggio();
+
+                //Timer tempo cottura
+                timer = new DispatcherTimer();
+                timer.Tick += new EventHandler(Finito);
+                timer.Interval = new TimeSpan(0, tempoCottura, 0);
+                timer.Start();
+
+                this.Resources["RectangleColorPreparazione"] = this.Resources["RectangleColorInCorso"];
+                icona_status.Source = new BitmapImage(new Uri("/icon/Preparazione_icon.png", UriKind.Relative));
+                lbl_status.Content = "In corso";
+                status = 1;
+                btn_elimina.IsEnabled = true;
+                btn_skip.IsEnabled = true;
+                Tavolo tavolo = MainWindow.tavoli.ElementAt(tavRef - 1);
+                foreach (Piatto piatto in tavolo.ordine)
                 {
-                    piatto.inPreparazione();
+                    if (piatto.desc.Equals((string)lbl_desc.Content))
+                    {
+                        piatto.inPreparazione();
+                    }
                 }
+                MainWindow.ricarica();
             }
-            MainWindow.ricarica();
+            else
+            {
+                Finito(new object { } , new EventArgs { });
+            }
+
         }
 
         void dt_Tick(object sender, EventArgs e)
@@ -97,7 +105,14 @@ namespace progettoRistorante.UserControllers
 
         public void Finito(Object sender, EventArgs e)
         {
-            stopWatch.Stop();
+            if (e.ToString() != "")
+            {
+                stopWatch.Stop();
+                stopWatch.Stop();
+                timeElasped.Stop();
+                timer.Stop();
+            }
+            
             this.Resources["RectangleColorPreparazione"] = this.Resources["RectangleColorPronto"];
             icona_status.Source = new BitmapImage(new Uri("/icon/DaFare_icon.png", UriKind.Relative));
             lbl_status.Content = "Finito";
@@ -107,12 +122,8 @@ namespace progettoRistorante.UserControllers
             status = 2;
             btn_conferma.IsEnabled = true;
             btn_elimina.IsEnabled = true;
-            stopWatch.Stop();
-            timeElasped.Stop();
-            timer.Stop();
 
-            Tavolo tavolo = MainWindow.tavoli.ElementAt(tavRef - 1);
-            foreach (Piatto piatto in tavolo.ordine)
+            foreach (Piatto piatto in MainWindow.tavoli.ElementAt(tavRef - 1).ordine)
             {
                 if (piatto.desc.Equals((string)lbl_desc.Content))
                 {

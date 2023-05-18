@@ -44,19 +44,30 @@ namespace progettoRistorante.UserControllers
 
         private void btn_aggiungi_Click(object sender, RoutedEventArgs e)
         {
-            tavoli++;
-            txt_numero.Text = tavoli.ToString();
+            if (tavoli < 35)
+            {
+                tavoli++;
+                txt_numero.Text = tavoli.ToString();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
+            if (tavoli > 35)
+            {
+                txt_numero.Text = "35";
+            }
             f1.aggiungiTavoli(int.Parse(txt_numero.Text));
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
+            if (tavoli > 35)
+            {
+                txt_numero.Text = "35";
+            }
             f1.aggiungiTavoli(int.Parse(txt_numero.Text));
         }
 

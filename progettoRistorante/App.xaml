@@ -39,6 +39,7 @@
         <FontFamily x:Key="SFPro Bold Display">./Font/Display/SF-Pro-Display-Bold.otf#SF Pro Display Bold</FontFamily>
         <FontFamily x:Key="SFPro ThinItalic Display">./Font/Display/SF-Pro-Display-ThinItalic.otf#SF Pro Display ThinItalic</FontFamily>
         <FontFamily x:Key="SFPro SemiBold Italic Display">./Font/Display/SF-Pro-Display-SemiboldItalic.otf#SF Pro Display SemiBold Italic</FontFamily>
+        <FontFamily x:Key="SFPro Regular Italic Display">./Font/Display/SF-Pro-Display-RegularItalic.otf#SF Pro Display Regular Italic</FontFamily>
         <FontFamily x:Key="Gabriola">./Font/Gabriola.ttf#Gabriola</FontFamily>
         <FontFamily x:Key="Merchant">./Font/merchant.ttf#Merchant Copy Doublesize</FontFamily>
         <Style x:Key="LabelStyle1" TargetType="{x:Type Label}">

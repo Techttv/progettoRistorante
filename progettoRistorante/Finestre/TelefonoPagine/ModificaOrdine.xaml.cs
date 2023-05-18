@@ -48,6 +48,14 @@ namespace progettoRistorante.Finestre.TelefonoPagine
 
         private void ComboBox_DropDownOpened(object sender, EventArgs e)
         {
+            cmb_tavoli.Items.Clear();
+            for (int i = 1; i <= MainWindow.tavoli.Count; i++)
+            {
+                if (MainWindow.tavoli.ElementAt(i - 1).ordine.Count > 0)
+                {
+                    cmb_tavoli.Items.Add(i.ToString());
+                }
+            }
         }
         private void cmb_tavoli_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -116,14 +124,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
         {
             animazione(frame);
 
-            cmb_tavoli.Items.Clear();
-            for (int i = 1; i <= MainWindow.tavoli.Count; i++)
-            {
-                if (MainWindow.tavoli.ElementAt(i - 1).ordine.Count > 0)
-                {
-                    cmb_tavoli.Items.Add(i.ToString());
-                }
-            }
+
 
             if (ritorno)
             {

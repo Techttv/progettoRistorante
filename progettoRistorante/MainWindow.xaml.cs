@@ -24,6 +24,8 @@ namespace progettoRistorante
         public static StackPanel ordiniGrid, colonnaPrimi, colonnaSecondi, colonnaDolci, stack_fornelliMain;
         public static WrapPanel wraptavoli;
         private ModificaTavoli CCModificaTavoli;
+        TelefonoOrdinazioni telefonoOrdinazioni;
+        VistaCucina vistaCucina;
 
         public MainWindow()
         {
@@ -33,10 +35,10 @@ namespace progettoRistorante
             CCModificaTavoli.Visibility = Visibility.Hidden;
             MainWindowGrid.Children.Add(CCModificaTavoli);
 
-            VistaCucina vistaCucina = new VistaCucina();
+            vistaCucina = new VistaCucina();
             vistaCucina.Show();
 
-            TelefonoOrdinazioni telefonoOrdinazioni = new TelefonoOrdinazioni();
+            telefonoOrdinazioni = new TelefonoOrdinazioni();
             telefonoOrdinazioni.Show();
             caricaMenu();
             ordiniGrid = ordini_grid; colonnaPrimi = scroll_colonnaPrimi; colonnaSecondi = scroll_colonnaSecondi; colonnaDolci = scroll_colonnaDolci;
@@ -171,6 +173,21 @@ namespace progettoRistorante
             rdb_tavoli.IsChecked = false;
             scroll_ordini.Visibility = Visibility.Visible;
             wrap_tavoli.Visibility = Visibility.Hidden;
+        }
+
+        private void btn_apri_Click(object sender, RoutedEventArgs e)
+        {
+            if(!vistaCucina.IsLoaded)
+            {
+                vistaCucina = new VistaCucina();
+                vistaCucina.Show();
+            }
+            if (!telefonoOrdinazioni.IsLoaded)
+            {
+                telefonoOrdinazioni = new TelefonoOrdinazioni();
+                telefonoOrdinazioni.Show();
+            }
+            
         }
 
         public void caricaMenu()

@@ -39,7 +39,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
 
         private void btn_paga_Click(object sender, RoutedEventArgs e)
         {
-
+            frame.Content = new Paga(frame);
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
