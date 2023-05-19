@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NK6Fz3BwoBPW5gwYc6Grup/F/T7NUZ8vAWo88GMgM6IUisP6cX4iWQZShLoWU5eE2bJDyRjzA+Oig4RLBK/Aiw==",
+  "dgSpecHash": "6difi+lw6i/lK1Ko4aZEHj5bP2KWikM5y17B0A46VupsUrUb9VGO/Xs5UKPUvLb7xDzmfqvsG6XxgICSHNvirg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tomma\\Source\\Repos\\Techttv\\progettoRistorante\\CCTavoli\\CCTavoli.csproj",
+  "projectFilePath": "C:\\Users\\19TOMMASOCARICATO\\Source\\Repos\\Techttv\\progettoRistorante\\CCTavoli\\CCTavoli.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\tomma\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
-    "C:\\Users\\tomma\\.nuget\\packages\\notification.wpf\\7.0.0\\notification.wpf.7.0.0.nupkg.sha512",
-    "C:\\Users\\tomma\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+    "C:\\Users\\19TOMMASOCARICATO\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\19TOMMASOCARICATO\\.nuget\\packages\\notification.wpf\\7.0.0\\notification.wpf.7.0.0.nupkg.sha512",
+    "C:\\Users\\19TOMMASOCARICATO\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -17,10 +17,7 @@ namespace progettoRistorante.Classes
             List<Piatto> temp = new List<Piatto>();
             foreach (Piatto piatto in tavolo.ordine)
             {
-                if (!temp.Contains(piatto)&&piatto.tipo==tipo&&piatto.Status==3&&!piatto.inQueue)
-                {
-                    temp.Add(piatto);
-                }
+                doesNotContain(piatto, temp, tipo);
             }
             foreach (Piatto piatto in temp)
             {
@@ -37,13 +34,14 @@ namespace progettoRistorante.Classes
                     switch (piatto.tipo)
                     {
                         case 1:
-                                primi.Enqueue(piatto);
+                            primi.Enqueue(piatto);
                             break;
                         case 2:
-                                secondi.Enqueue(piatto);
+                            secondi.Enqueue(piatto);
                             break;
                         case 3:
-                                dolci.Enqueue(piatto);
+
+                            dolci.Enqueue(piatto);
                             break;
                     }
                 }
@@ -88,6 +86,7 @@ namespace progettoRistorante.Classes
             if (primi.Count > 0)
             {
                 temp = primi.Dequeue();
+                temp.inPreparazione();
             }
             else if (secondi.Count > 0)
             {
@@ -96,17 +95,35 @@ namespace progettoRistorante.Classes
                 if(!MainWindow.tavoli.ElementAt(temp.tavolo-1).timer.IsEnabled)
                 {
                     temp =secondi.Dequeue();
+                    temp.inPreparazione();
                 }
             }
             else if (dolci.Count > 0)
             {
                 temp = dolci.First();
-                if (!MainWindow.tavoli.ElementAt(temp.tavolo-1).timer.IsEnabled)
+                if (!MainWindow.tavoli.ElementAt(temp.tavolo-1).timer.IsEnabled&&!temp.inQueue)
                 {
                     temp = dolci.Dequeue();
+                    temp.inPreparazione();
                 }
             }
             return temp;
+        }
+
+        static void doesNotContain(Piatto piatto, List<Piatto> temp,int tipo)
+        {
+            int trovati = 0;
+            foreach(Piatto piatto1 in temp)
+            {
+                if (piatto1.desc == piatto.desc)
+                {
+                    trovati++;
+                }
+            }
+            if (trovati == 0&& piatto.tipo == tipo && piatto.Status == 3 && !piatto.inQueue)
+            {
+                temp.Add(piatto);
+            }
         }
     }
 }

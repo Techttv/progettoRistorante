@@ -41,11 +41,13 @@ namespace progettoRistorante.Classes
 
         public void inPreparazione()
         {
+            inQueue = true;
             Status = 2;
 
         }
         public void Disponibile()
         {
+            inQueue = false;
             Status = 3;
         }
 
