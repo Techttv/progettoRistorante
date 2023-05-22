@@ -189,6 +189,11 @@ namespace progettoRistorante
             
         }
 
+        private void Home_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
         public void caricaMenu()
         {
             StreamReader sr = new StreamReader(File.OpenRead(@"menu.csv"));

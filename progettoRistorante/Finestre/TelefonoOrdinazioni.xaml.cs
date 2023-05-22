@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using PdfSharp.Fonts;
 using progettoRistorante.Classes;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace progettoRistorante.Finestre
 {
@@ -38,6 +39,5 @@ namespace progettoRistorante.Finestre
             this.WindowState = WindowState.Minimized;
 
         }
-
     }
 }
