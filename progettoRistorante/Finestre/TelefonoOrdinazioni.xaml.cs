@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PdfSharp.Fonts;
 using progettoRistorante.Classes;
+using System.ComponentModel;
 
 namespace progettoRistorante.Finestre
 {
@@ -29,6 +30,13 @@ namespace progettoRistorante.Finestre
             
             InitializeComponent();
             Home.Content = new Home(Home) ;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.WindowState = WindowState.Minimized;
+
         }
 
     }

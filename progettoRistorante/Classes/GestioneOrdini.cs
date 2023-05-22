@@ -101,7 +101,7 @@ namespace progettoRistorante.Classes
             else if (dolci.Count > 0)
             {
                 temp = dolci.First();
-                if (!MainWindow.tavoli.ElementAt(temp.tavolo-1).timer.IsEnabled&&!temp.inQueue)
+                if (!MainWindow.tavoli.ElementAt(temp.tavolo-1).timer.IsEnabled)
                 {
                     temp = dolci.Dequeue();
                     temp.inPreparazione();

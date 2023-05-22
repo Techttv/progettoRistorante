@@ -179,16 +179,13 @@ namespace progettoRistorante
 
         private void btn_apri_Click(object sender, RoutedEventArgs e)
         {
-            if(!vistaCucina.IsLoaded)
-            {
-                vistaCucina = new VistaCucina();
+                vistaCucina.WindowState = WindowState.Normal;
+            vistaCucina.Activate();
                 vistaCucina.Show();
-            }
-            if (!telefonoOrdinazioni.IsLoaded)
-            {
-                telefonoOrdinazioni = new TelefonoOrdinazioni();
+
+                telefonoOrdinazioni.WindowState = WindowState.Normal;
+            telefonoOrdinazioni.Activate();
                 telefonoOrdinazioni.Show();
-            }
             
         }
 
@@ -454,7 +451,7 @@ namespace progettoRistorante
             return tavolos;
         }
 
-        
+
     }
 
 

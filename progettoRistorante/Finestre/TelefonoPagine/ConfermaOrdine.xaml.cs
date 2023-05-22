@@ -7,6 +7,7 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
@@ -27,9 +28,14 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             {
                 stampaScontrinoProvvisorio();
             }
-            NuovoOrdine.tavolo.cambiaStatus(1);
-            MainWindow.tavoli.RemoveAt(NuovoOrdine.tavolo.numeroTavolo - 1);
-            MainWindow.tavoli.Insert(NuovoOrdine.tavolo.numeroTavolo - 1, NuovoOrdine.tavolo);
+            MainWindow.tavoli.ElementAt(NuovoOrdine.tavolo.numeroTavolo - 1).cambiaStatus(1);
+            foreach (Piatto piatto in NuovoOrdine.tavolo.ordine) {
+
+                MainWindow.tavoli.ElementAt(NuovoOrdine.tavolo.numeroTavolo - 1).aggiungiPiatto(piatto);
+            }
+
+            /*MainWindow.tavoli.RemoveAt(NuovoOrdine.tavolo.numeroTavolo - 1);
+            MainWindow.tavoli.Insert(NuovoOrdine.tavolo.numeroTavolo - 1, NuovoOrdine.tavolo);*/
             foreach(Piatto piatto in NuovoOrdine.tavolo.ordine)
             {
                 if (piatto.tipo == 1 && piatto.Status >1)
