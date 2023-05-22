@@ -33,6 +33,10 @@ namespace progettoRistorante.Classes
             return desc + "" + tipo + "" + Status;
         }
 
+        public void Finito()
+        {
+            Status = 0;
+        }
         public void pronto()
         {
             Status = 1;
@@ -51,10 +55,7 @@ namespace progettoRistorante.Classes
             Status = 3;
         }
 
-        public void Finito()
-        {
-            Status = 0;
-        }
+
 
     }
 }

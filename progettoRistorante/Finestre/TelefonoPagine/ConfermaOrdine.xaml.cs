@@ -28,17 +28,20 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             {
                 stampaScontrinoProvvisorio();
             }
-            MainWindow.tavoli.ElementAt(NuovoOrdine.tavolo.numeroTavolo - 1).cambiaStatus(1);
-            foreach (Piatto piatto in NuovoOrdine.tavolo.ordine) {
-
-                MainWindow.tavoli.ElementAt(NuovoOrdine.tavolo.numeroTavolo - 1).aggiungiPiatto(piatto);
-            }
-
-            /*MainWindow.tavoli.RemoveAt(NuovoOrdine.tavolo.numeroTavolo - 1);
-            MainWindow.tavoli.Insert(NuovoOrdine.tavolo.numeroTavolo - 1, NuovoOrdine.tavolo);*/
-            foreach(Piatto piatto in NuovoOrdine.tavolo.ordine)
+            NuovoOrdine.tavolo.cambiaStatus(1);
+            foreach (Piatto piatto in NuovoOrdine.tavolo.ordine)
             {
-                if (piatto.tipo == 1 && piatto.Status >1)
+                if(MainWindow.tavoli.ElementAt(NuovoOrdine.tavolo.numeroTavolo - 1).ordine.Find(x => piatto.desc.Equals(x.desc) && x.Status == 2|| x.Status == 1) !=null)
+                {
+                    piatto.Status = MainWindow.tavoli.ElementAt(NuovoOrdine.tavolo.numeroTavolo - 1).ordine.Find(x => piatto.desc.Equals(x.desc) && x.Status == 2 || x.Status == 1).Status;
+                }
+            }
+            MainWindow.tavoli.RemoveAt(NuovoOrdine.tavolo.numeroTavolo - 1);
+            MainWindow.tavoli.Insert(NuovoOrdine.tavolo.numeroTavolo - 1, NuovoOrdine.tavolo);
+            foreach (Piatto piatto in NuovoOrdine.tavolo.ordine)
+            {
+                
+                if (piatto.tipo == 1 && piatto.Status ==3 && !piatto.inQueue)
                 {
                     GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 1);
                     VistaCucina.preparaPiatto();
@@ -51,7 +54,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             }
             foreach(Piatto piatto in NuovoOrdine.tavolo.ordine)
             {
-                if (piatto.tipo == 2 && piatto.Status > 1)
+                if (piatto.tipo == 2 && piatto.Status ==3 && !piatto.inQueue)
                 {
                     GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 2);
                     VistaCucina.preparaPiatto();
@@ -65,7 +68,7 @@ namespace progettoRistorante.Finestre.TelefonoPagine
             foreach (Piatto piatto in NuovoOrdine.tavolo.ordine)
             {
 
-                if (piatto.tipo == 3 && piatto.Status > 1)
+                if (piatto.tipo == 3 && piatto.Status ==3 && !piatto.inQueue)
                 {
                     GestioneOrdini.aggiungiOrdine(NuovoOrdine.tavolo, 3);
                     VistaCucina.preparaPiatto();
